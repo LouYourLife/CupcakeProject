@@ -18,6 +18,13 @@
 
 
 
-        You are now logged in as a EMPLOYEE of our wonderful site.
+        You are now logged in as an EMPLOYEE of our wonderful site.
+
+<%--    TODO: Få siden til at ligne forsiden med farver og opbygning, se Matti's kode senere for sammenligning --%>
+
+<%--    TODO: Man kan sætte beløb direkte ind på en kundes konto, så de får en regning for deres cupcakes --%>
+
+<%--    TODO: Lav en knap som viser ordrerliste som Cathrine laver, connect til det --%>
+
     </body>
 </html>
