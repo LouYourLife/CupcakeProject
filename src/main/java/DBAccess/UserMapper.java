@@ -37,7 +37,7 @@ public class UserMapper {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT id, role FROM Users "
-                    + "WHERE email=? AND password=?";
+                    + "WHERE user=? AND password=?";
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
             ps.setString( 2, password );
