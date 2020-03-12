@@ -24,9 +24,10 @@
 
 <%-- TODO: Man kan sætte beløb direkte ind på en kundes konto, så de får en regning for deres cupcakes --%>
 
-        <form action="/action_page.php">
-            <label for="fname">Kunde:</label><br>
-            <input type="text" id="fname" name="fname" value="email"><br>
+        <form name="sendPrice" action="FrontController" method="POST">
+            <input type="hidden" name="taget" value="??">
+            <label for="email">Kunde:</label><br>
+            <input type="text" id="email" name="fname" value="email"><br>
             <label for="lname">Beløb der skal betales:</label><br>
             <input type="text" id="lname" name="lname" value="0.0"><br><br>
             <input type="submit" value="Send">
