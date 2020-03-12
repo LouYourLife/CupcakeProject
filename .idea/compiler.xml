@@ -6,23 +6,38 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="Projektskabelon" />
         <module name="ProjektSkabelon-master" />
         <module name="Projektskabelon-master" />
         <module name="prejektSkabelon" />
         <module name="CupcakeProject" />
         <module name="Cupcake project" />
+=======
+        <module name="prejektSkabelon" />
+        <module name="ProjektSkabelon-master" />
+        <module name="Cupcake project" />
+        <module name="Projektskabelon-master" />
+        <module name="Projektskabelon" />
+>>>>>>> 154ac13318a371037a482e096e7a3b70a9a3bb0f
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Cupcake project" options="-endorseddirs &quot;C:\Users\vnord\Documents\Semester2\Cupcake project\target/endorsed&quot;" />
+<<<<<<< HEAD
       <module name="CupcakeProject" options="-endorseddirs C:\Users\matti\Desktop\gitfolder\CupcakeProject\target/endorsed" />
       <module name="ProjektSkabelon-master" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
       <module name="Projektskabelon" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
       <module name="Projektskabelon-master" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
       <module name="prejektSkabelon" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
+=======
+      <module name="ProjektSkabelon-master" options="-endorseddirs &quot;$USER_HOME$/Mathias/Desktop/DAT2sem/Cupcake/CupcakeProject/target/endorsed&quot;" />
+      <module name="Projektskabelon" options="-endorseddirs &quot;$USER_HOME$/Mathias/Desktop/DAT2sem/Cupcake/CupcakeProject/target/endorsed&quot;" />
+      <module name="Projektskabelon-master" options="-endorseddirs $USER_HOME$/Mathias/Desktop/DAT2sem/Cupcake/CupcakeProject/target/endorsed" />
+      <module name="prejektSkabelon" options="-endorseddirs &quot;$USER_HOME$/Mathias/Desktop/DAT2sem/Cupcake/CupcakeProject/target/endorsed&quot;" />
+>>>>>>> 154ac13318a371037a482e096e7a3b70a9a3bb0f
     </option>
   </component>
 </project>
