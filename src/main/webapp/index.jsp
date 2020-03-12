@@ -44,7 +44,8 @@
     <h1 align="center">Velkommen ombord</h1>
     <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
 
-    <form>
+    <form name="Order" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="Order">
         <div class="d-lg-table-row">
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
