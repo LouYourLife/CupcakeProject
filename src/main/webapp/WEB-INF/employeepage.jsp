@@ -33,8 +33,9 @@
             <input type="submit" value="Send">
         </form>
 
-        <%-- TODO: Lav en knap som viser ordrerliste som Cathrine laver, connect til det --%>
-        f
+        <%-- TODO: Lav en knap som viser ordrerliste, connect til det --%>
+        Ordrerliste:
+
 
     </body>
 </html>
