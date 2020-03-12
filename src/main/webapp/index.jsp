@@ -63,7 +63,7 @@
                     <option selected>Choose...</option>
                     <option value="1">Chocolate</option>
                     <option value="2">Blueberry</option>
-                    <option value="3">Rasberry</option>
+                    <option value="3">Raspberry</option>
                     <option value="4">Crispy</option>
                     <option value="5">Strawberry</option>
                     <option value="6">Rum/Raisin</option>
