@@ -48,7 +48,7 @@
         <div class="d-lg-table-row">
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="bot">
                     <option selected>Choose...</option>
                     <option value="1">Chocolate</option>
                     <option value="2">Vanilla</option>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Topping</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="top">
                     <option selected>Choose...</option>
                     <option value="1">Chocolate</option>
                     <option value="2">Blueberry</option>
@@ -78,10 +78,10 @@
                     <label for="Antal"></label>
 
                     <!--                    Her kan man ikke skrive tekst-->
-                    <input type="number" class="form-control" placeholder="Hvor mange" id="Antal">
+                    <input type="number" name= "amount" class="form-control" placeholder="Hvor mange" id="Antal">
                 </div>
                 <br><br>
-                <input type="submit" value="Submit" class="btn btn-primary">
+                <input type="submit" value="Bestil" class="btn btn-primary">
             </div>
         </div>
 
