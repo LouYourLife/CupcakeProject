@@ -9,60 +9,67 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome page</title>
-    </head>
-    <body>
-        <h1>Welcome to Sem 2</h1>
-        
-        <table>
-            <tr><td>Login</td>
-                <td>
-                    <form name="login" action="FrontController" method="POST">
-                        <input type="hidden" name="taget" value="login">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </td>
-                <td>Or Register</td>
-                <td>
-                    <form name="register" action="FrontController" method="POST">
-                        <input type="hidden" name="taget" value="register">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password1" value="sesam">
-                        <br>
-                        Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </td>
-            </tr>
-        </table>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>MainPage</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<div align="center">
+    <img src="olskercupcakes.png" class="img-fluid">
+</div>
+<h1 align="center">Login for at betale for dine CupCakes</h1>
+
+<div align="center">
+    <table>
+        <tr>
+            <td>
+                <h2 align="center">Login</h2>
+                <form name="login" action="FrontController" method="POST">
+                    <input type="hidden" name="taget" value="login">
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" value="email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" value="password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </td>
+
+            <td>
+                <h2 align="center">Register</h2>
+                <form name="register" action="FrontController" method="POST">
+                    <input type="hidden" name="taget" value="register">
+                    <div class="form-group">
+                        <input type="email" class="form-control"  value="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" value="password">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="password" class="form-control" value="password">
+                    </div>
 
 
-<%--        Bare lige se I har en ide om hvad vi forslå I ikke gør ! det hedder scpript lets --%>
-<%--        <% String error = (String) request.getAttribute( "error");--%>
-<%--           if ( error != null) { --%>
-<%--               out.println("<H2>Error!!</h2>");--%>
-<%--               out.println(error);--%>
-<%--           }--%>
-<%--        %>--%>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                </form>
+            </td>
+        </tr>
+    </table>
 
-        <c:if test = "${requestScope.error!= null}" >
+</div>
 
-           <h2>Error ! </h2>
-            ${requestScope.error}
+<!--<c:if test = "${requestScope.error!= null}" >-->
 
-        </c:if>
-    </body>
+<!--    <h2>Error ! </h2>-->
+<!--    ${requestScope.error}-->
+
+<!--</c:if>-->
+</body>
 </html>
