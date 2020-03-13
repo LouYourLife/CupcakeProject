@@ -17,6 +17,7 @@
         <th>Muffin(s) pris</th>
     </tr>
     <c:set var="total" value="0"></c:set>
+
     <c:forEach var="item" items="${sessionScope.cart }">
         <c:set var="total" value="${total + item.product.price * item.quantity }"></c:set>
         <tr>
