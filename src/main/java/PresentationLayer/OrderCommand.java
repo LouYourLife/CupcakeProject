@@ -25,6 +25,6 @@ public class OrderCommand extends Command {
 
         OrderMapper.makeOrder(order);
 
-        return "temp" + "page";
+        return "Cart" + "Page";
     }
 }
