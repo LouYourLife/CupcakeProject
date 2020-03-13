@@ -44,6 +44,17 @@
     <h1 align="center">Velkommen ombord</h1>
     <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
 
+    <form name="login" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="login">
+        Email:<br>
+        <input type="text" name="email" value="someone@nowhere.com">
+        <br>
+        Password:<br>
+        <input type="password" name="password" value="sesam">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
     <form>
         <div class="d-lg-table-row">
             <div class="col-auto my-1">
