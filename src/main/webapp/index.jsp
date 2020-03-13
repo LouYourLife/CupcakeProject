@@ -46,6 +46,12 @@
 
 
     <form name="login" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="loginpage">
+        <input type="submit" value="Gå til loginside">
+    </form>
+
+
+    <form name="login" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="login">
         Email:<br>
         <input type="text" name="email" value="someone@nowhere.com">

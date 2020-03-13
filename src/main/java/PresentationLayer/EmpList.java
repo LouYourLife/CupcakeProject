@@ -10,18 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
-public class CustomerPay extends Command {
+public class EmpList extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-        String pay = request.getParameter("pay");
-        //Double payD = Double.valueOf(pay);
-        String userName = request.getParameter("user");
+        ArrayList<User> users = EmployeeMapper.getUser();
 
-        EmployeeMapper.addAmount(pay, userName);
+        request.setAttribute("test", users);
 
-        request.setAttribute("addAmMes", "Bruger " + userName + " skal nu betale " + pay);
-
-        return "employee" + "page";
+        return "employee" + "list";
     }
 }
