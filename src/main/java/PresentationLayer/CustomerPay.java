@@ -15,10 +15,11 @@ public class CustomerPay extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
         String pay = request.getParameter("pay");
-        //Double payD = Double.valueOf(pay);
+        Double payD = Double.parseDouble(pay);
+        //Double payD = Double.parseDouble("2.3");
         String userName = request.getParameter("user");
 
-        EmployeeMapper.addAmount(pay, userName);
+        EmployeeMapper.addAmount(payD, userName);
 
         request.setAttribute("addAmMes", "Bruger " + userName + " skal nu betale " + pay);
 

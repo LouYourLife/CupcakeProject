@@ -29,7 +29,7 @@
             <br>
             <label for="pay">Beløb der skal betales:</label>
             <br>
-            <input type="text" id="pay" name="customerPay" value="">
+            <input type="text" id="pay" name="pay" value="">
             <br><br>
             <input type="submit" value="Submit">
         </form>

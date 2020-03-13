@@ -60,14 +60,14 @@ public class EmployeeMapper {
     }
 
 /*Som administrator kan jeg indsætte beløb på en kundes konto direkte i MySql, så en kunde kan betale for sine ordrer.*/
-    public static void addAmount(String pay, String user) throws LoginSampleException {
+    public static void addAmount(Double pay, String user) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
             String SQL = "UPDATE cakeorders.users SET Bank = ? where user = ?";
             PreparedStatement ps = con.prepareStatement( SQL );
             //Double pay2 = Double.valueOf(pay);
             //ps.setDouble(1, pay2);
-            ps.setString(1, pay);
+            ps.setDouble(1, pay);
             ps.setString(2, user);
             ps.execute();
         } catch ( SQLException | ClassNotFoundException ex ) {

@@ -26,7 +26,7 @@
             <td>
                 <h2 align="center">Login</h2>
                 <form name="login" action="FrontController" method="POST">
-                    <input type="hidden" name="taget" value="order">
+                    <input type="hidden" name="taget" value="login">
 
                     <div class="form-group">
                         <input type="email" name="email" class="form-control" value="email">
