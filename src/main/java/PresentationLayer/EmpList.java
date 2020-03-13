@@ -4,6 +4,7 @@ package PresentationLayer;
 
 import DBAccess.EmployeeMapper;
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Order;
 import FunctionLayer.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,8 +16,10 @@ public class EmpList extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
         ArrayList<User> users = EmployeeMapper.getUser();
+        ArrayList<Order> orders = EmployeeMapper.orderList();
 
-        request.setAttribute("test", users);
+        request.setAttribute("users", users);
+        request.setAttribute("orders", orders);
 
         return "employee" + "list";
     }

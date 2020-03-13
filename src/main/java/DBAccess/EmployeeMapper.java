@@ -39,11 +39,18 @@ public class EmployeeMapper {
 
         try {
             Connection connection = Connector.connection();
-            String sql = "";
+            String sql = "SELECT * FROM cakeorders.orders";
             PreparedStatement ps =connection.prepareStatement( sql );
             ResultSet rs =ps.executeQuery();
             while (rs.next()) {
-
+                String username = rs.getString("user");
+                String top = rs.getString("top");
+                String bot = rs.getString("bot");
+                int amount = rs.getInt("amount");
+                int sum = rs.getInt("sum");
+                int id = rs.getInt("id");
+                Order order = new Order(username, top, bot, amount, sum, id);
+                orders.add(order);
             }
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );

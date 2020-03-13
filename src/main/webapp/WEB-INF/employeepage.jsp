@@ -36,7 +36,7 @@
 
         ${requestScope.addAmMes}
 
-        <%-- TODO: Lav en knap som viser ordrerliste, connect til det --%>
+        <%-- En knap som viser ordrerliste og kundeliste --%>
         <h2>Ordrerliste:</h2>
         Her vises listen
 
