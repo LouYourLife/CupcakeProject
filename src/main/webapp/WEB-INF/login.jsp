@@ -45,7 +45,7 @@
                 <form name="register" action="FrontController" method="POST">
                     <input type="hidden" name="taget" value="register">
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control"  value="email">
+                        <input type="text" name="email" class="form-control"  value="email">
                     </div>
                     <div class="form-group">
                         <input type="password" name="password1" class="form-control" value="password">

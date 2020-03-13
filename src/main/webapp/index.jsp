@@ -51,18 +51,6 @@
     </form>
 
 
-    <form name="login" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="login">
-        Email:<br>
-        <input type="text" name="email" value="someone@nowhere.com">
-        <br>
-        Password:<br>
-        <input type="password" name="password" value="sesam">
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-
-
     <form name="order" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="order">
         <div class="d-lg-table-row">
