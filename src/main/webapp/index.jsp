@@ -43,7 +43,7 @@
 
     <h1 align="center">Velkommen ombord</h1>
     <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
-    
+
 
     <form name="login" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="login">
@@ -58,7 +58,7 @@
 
 
     <form name="order" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="order">
+        <input type="hidden" name="taget" value="login">
         <div class="d-lg-table-row">
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
