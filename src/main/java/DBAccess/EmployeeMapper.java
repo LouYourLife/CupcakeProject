@@ -1,3 +1,5 @@
+//Author: Vibeke
+
 package DBAccess;
 
 import FunctionLayer.LoginSampleException;

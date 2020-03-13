@@ -44,6 +44,10 @@
     <h1 align="center">Velkommen ombord</h1>
     <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
 
+    <form name="login" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="loginpage">
+        <input type="submit" value="Gå til loginside">
+    </form>
 
     <form name="login" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="login">

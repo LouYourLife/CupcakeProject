@@ -1,3 +1,5 @@
+<%--Author: Vibeke--%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,16 +41,9 @@
         Her vises listen
 
         <form name="login" action="FrontController" method="POST">
-            <input type="hidden" name="taget" value="customerPay">
-            <input type="submit" value="Gå til oversigt">
+            <input type="hidden" name="taget" value="empList">
+            <input type="submit" value="Gå til ordreliste">
         </form>
-
-        <c:forEach var="element" items="${requestScope.test}">
-
-            ${element}
-            <br>
-
-        </c:forEach>
 
     </body>
 </html>
