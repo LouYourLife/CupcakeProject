@@ -34,6 +34,7 @@ public class OrderMapper {
         int prices = 0;
         try {
             Connection con = Connector.connection();
+            Connection con2 = Connector.connection();
             String SQL = "Select topprice where top = ?";
             PreparedStatement ps = con.prepareStatement( SQL);
             ps.setString(1, top);
@@ -45,8 +46,8 @@ public class OrderMapper {
             ps = con.prepareStatement( SQL);
             ps.setString(1, bot);
             ps.execute();
-            rs = ps.executeQuery();
-            botprice = rs.getInt("botprice");
+            ResultSet rs2 = ps.executeQuery();
+            botprice = rs2.getInt("botprice");
 
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );

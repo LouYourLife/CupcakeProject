@@ -44,11 +44,13 @@
     <h1 align="center">Velkommen ombord</h1>
     <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
 
-    <form>
+    <form name="order" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="order">
         <div class="d-lg-table-row">
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="bot">
+
                     <option selected>Choose...</option>
                     <option value="1">Chocolate</option>
                     <option value="2">Vanilla</option>
@@ -60,6 +62,7 @@
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Topping</label>
                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="top">
+
                     <option selected>Choose...</option>
                     <option value="1">Chocolate</option>
                     <option value="2">Blueberry</option>
@@ -78,7 +81,7 @@
                     <label for="Antal"></label>
 
                     <!--                    Her kan man ikke skrive tekst-->
-                    <input type="number" name= "amount" class="form-control" placeholder="Hvor mange" id="Antal">
+                    <input type="number" name="amount" class="form-control" placeholder="Hvor mange" id="Antal">
                 </div>
                 <br><br>
                 <input type="submit" value="Bestil" class="btn btn-primary">
