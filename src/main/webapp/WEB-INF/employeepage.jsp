@@ -9,7 +9,10 @@
         <title>Employee home page</title>
     </head>
     <body>
-        
+    <div class="container">
+        <img src="src/main/webapp/WEB-INF/olskercupcakes.png" class="img-fluid"/>
+    </div>
+
 
         <h1>Hello ${sessionScope.email} </h1>
 

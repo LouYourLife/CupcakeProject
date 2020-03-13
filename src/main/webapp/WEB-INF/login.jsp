@@ -16,7 +16,7 @@
 </head>
 <body>
 <div align="center">
-    <img src="olskercupcakes.png" class="img-fluid">
+    <img src="Images/olskercupcakes.png" class="img-fluid">
 </div>
 <h1 align="center">Login for at betale for dine CupCakes</h1>
 
@@ -78,7 +78,7 @@ ${requestScope.error}
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2020 Copyright: BSHProduction
-        
+
     </div>
     <!-- Copyright -->
 
