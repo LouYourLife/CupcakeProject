@@ -8,7 +8,7 @@ public class Order {
     private int amount;
     private int sum;
 
-    public Order(User user, String top, String bot, int amount, int sum) {
+    public Order(User user, String top, String bot, int amount) {
         this.user = user;
         this.top = top;
         this.bot = bot;
