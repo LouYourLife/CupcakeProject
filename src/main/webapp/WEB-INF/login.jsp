@@ -66,12 +66,12 @@
 
 </div>
 
-<!--<c:if test = "${requestScope.error!= null}" >-->
+<c:if test = "${requestScope.error!= null}" >
 
-<!--    <h2>Error ! </h2>-->
-<!--    ${requestScope.error}-->
+<h2>Error ! </h2>
+${requestScope.error}
 
-<!--</c:if>-->
+</c:if>
 
 
 <footer class="page-footer font-small blue">
