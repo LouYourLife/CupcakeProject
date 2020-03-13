@@ -15,7 +15,7 @@
 </head>
 <body>
 <div align="center">
-    <img src="olskercupcakes.png" class="img-fluid">
+    <img src="/olskercupcakes.png" class="img-fluid">
 </div>
 <div align="center">
     <div>
