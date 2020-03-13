@@ -14,6 +14,13 @@ public class Order {
         this.top = top;
         this.bot = bot;
         this.amount = amount;
+    }
+
+    public Order(User user, String top, String bot, int amount, int sum) {
+        this.user = user;
+        this.top = top;
+        this.bot = bot;
+        this.amount = amount;
         this.sum = sum;
     }
 

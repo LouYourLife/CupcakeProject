@@ -50,9 +50,8 @@
         <input type="submit" value="Gå til loginside">
     </form>
 
-
     <form name="order" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="order">
+        <input type="hidden" name="taget" value="login">
         <div class="d-lg-table-row">
             <div class="col-auto my-1">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>

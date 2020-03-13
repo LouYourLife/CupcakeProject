@@ -18,13 +18,10 @@ public class OrderCommand extends Command {
         String top = request.getParameter("top");
         String bot = request.getParameter("bot");
         int amount = Integer.parseInt(request.getParameter("amount"));
-        Order order = new Order(user, top, bot, amount);
+        int prices = OrderMapper.getPrices(top, bot);
+        int sum = prices * amount;
 
-            int prices = OrderMapper.getPrices(order);
-            int sum = prices * amount;
-            order.setSum(sum);
-
-        
+        Order order = new Order(user, top, bot, amount, sum);
 
         OrderMapper.makeOrder(order);
 
