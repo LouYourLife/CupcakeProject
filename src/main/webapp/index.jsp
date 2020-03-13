@@ -14,6 +14,7 @@
     <meta charset="utf-8">
 </head>
 <body>
+
 <div align="center">
     <img src="/olskercupcakes.png" class="img-fluid">
 </div>
@@ -52,8 +53,8 @@
 
     <form name="order" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="login">
-        <div class="d-lg-table-row">
-            <div class="col-auto my-1">
+        <div class="shadow p-3 mb-5 bg-white rounded">
+            <div class="col-4">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="bot">
 
@@ -65,7 +66,7 @@
                     <option value="5">Almond</option>
                 </select>
             </div>
-            <div class="col-auto my-1">
+            <div class="col-4">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Topping</label>
                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="top">
 
@@ -81,7 +82,7 @@
                     <option value="9">Blue cheese</option>
                 </select>
             </div>
-            <div class="col-auto my-1">
+            <div class="col-4">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Antal</label>
                 <div class="form-group">
                     <label for="Antal"></label>
@@ -96,6 +97,7 @@
 
     </form>
 </div>
+<br><br><br><br>
 <footer class="page-footer font-small blue">
 
     <!-- Copyright -->
