@@ -43,6 +43,19 @@
 
     <h1 align="center">Velkommen ombord</h1>
     <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
+    
+
+    <form name="login" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="login">
+        Email:<br>
+        <input type="text" name="email" value="someone@nowhere.com">
+        <br>
+        Password:<br>
+        <input type="password" name="password" value="sesam">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
 
     <form name="order" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="order">
@@ -90,6 +103,14 @@
 
     </form>
 </div>
+<footer class="page-footer font-small blue">
 
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright: BSHProduction
+
+    </div>
+    <!-- Copyright -->
+
+</footer>
 </body>
 </html>
