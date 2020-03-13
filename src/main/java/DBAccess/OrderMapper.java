@@ -25,6 +25,22 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+//    måske færdig
+    public static void deleteOrder(Order order) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            //delete from cakeorders.users where user = '123@gmail.com';
+            String SQL = "DELETE FROM cakeorders.orders WHERE id=?;";
+            PreparedStatement ps = con.prepareStatement( SQL);
+            ps.setInt(1, order.getId());
+
+
+            ps.execute();
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
 
     public static int getPrices(Order order) throws LoginSampleException {
         String top = order.getTop();
