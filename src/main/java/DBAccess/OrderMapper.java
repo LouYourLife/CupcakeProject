@@ -5,6 +5,7 @@ import FunctionLayer.Order;
 import FunctionLayer.User;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class OrderMapper {
 
@@ -42,14 +43,13 @@ public class OrderMapper {
         }
     }
 
-    public static int getPrices(Order order) throws LoginSampleException {
-        String top = order.getTop();
-        String bot = order.getBot();
+    public static int getPrices(String top, String bot) throws LoginSampleException {
         int topprice = 0;
         int botprice = 0;
         int prices = 0;
         try {
             Connection con = Connector.connection();
+            Connection con2 = Connector.connection();
             String SQL = "Select topprice where top = ?";
             PreparedStatement ps = con.prepareStatement( SQL);
             ps.setString(1, top);
@@ -61,14 +61,39 @@ public class OrderMapper {
             ps = con.prepareStatement( SQL);
             ps.setString(1, bot);
             ps.execute();
-            rs = ps.executeQuery();
-            botprice = rs.getInt("botprice");
+            ResultSet rs2 = ps.executeQuery();
+            botprice = rs2.getInt("botprice");
 
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }
         prices = topprice + botprice;
         return prices;
+    }
+
+    public static ArrayList<Order> seeOrders(User user) throws LoginSampleException {
+        ArrayList<Order> orderList = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "Select * from orders where user = ?";
+            PreparedStatement ps = con.prepareStatement( SQL);
+            ps.setString(1, user.getEmail());
+            ps.execute();
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                String top = rs.getString("top");
+                String bot = rs.getString("bot");
+
+
+                
+            }
+
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+
+        return orderList;
     }
 
 

@@ -7,13 +7,30 @@ public class Order {
     private String bot;
     private int amount;
     private int sum;
+    private String username;
 
     public Order(User user, String top, String bot, int amount) {
         this.user = user;
         this.top = top;
         this.bot = bot;
         this.amount = amount;
+    }
+
+    public Order(User user, String top, String bot, int amount, int sum) {
+        this.user = user;
+        this.top = top;
+        this.bot = bot;
+        this.amount = amount;
         this.sum = sum;
+    }
+
+    public Order(String username, String top, String bot, int amount, int sum, int id) {
+        this.username = username;
+        this.top = top;
+        this.bot = bot;
+        this.amount = amount;
+        this.sum = sum;
+        this.id = id;
     }
 
     public int getId() {
@@ -62,5 +79,15 @@ public class Order {
 
     public void setSum(int sum) {
         this.sum = sum;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public String toString() {
+        return "Ordre " + getId() + " er bestilt af " + getUsername() + ". " + getAmount() + " cupcakes med " + getBot() + " bund og " +
+                getTop() + " på toppen. Det bliver " + getSum() + " DKK i alt.";
     }
 }

@@ -26,14 +26,15 @@
             <td>
                 <h2 align="center">Login</h2>
                 <form name="login" action="FrontController" method="POST">
+
                     <input type="hidden" name="taget" value="login">
 
                     <div class="form-group">
-                        <input type="email" class="form-control" value="email">
+                        <input type="email" name="email" class="form-control" value="email">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" value="password">
+                        <input type="password" name="password" class="form-control" value="password">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -45,14 +46,14 @@
                 <form name="register" action="FrontController" method="POST">
                     <input type="hidden" name="taget" value="register">
                     <div class="form-group">
-                        <input type="email" class="form-control"  value="email">
+                        <input type="text" name="email" class="form-control"  value="email">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" value="password">
+                        <input type="password" name="password1" class="form-control" value="password">
                     </div>
                     <div class="form-group">
 
-                        <input type="password" class="form-control" value="password">
+                        <input type="password" name="password2" class="form-control" value="password">
                     </div>
 
 

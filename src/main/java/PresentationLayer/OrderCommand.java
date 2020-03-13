@@ -14,19 +14,17 @@ public class OrderCommand extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
 
-
         User user = (User) session.getAttribute("user");
         String top = request.getParameter("top");
         String bot = request.getParameter("bot");
         int amount = Integer.parseInt(request.getParameter("amount"));
-        Order order = new Order(user, top, bot, amount);
+        int prices = OrderMapper.getPrices(top, bot);
+        int sum = prices * amount;
 
-            int prices = OrderMapper.getPrices(order);
-            int sum = prices * amount;
-            order.setSum(sum);
+        Order order = new Order(user, top, bot, amount, sum);
 
         OrderMapper.makeOrder(order);
 
-        return "indkøbskurv" + "page";
+        return "Cart" + "Page";
     }
 }
