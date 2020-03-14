@@ -16,7 +16,7 @@
 </head>
 <body>
 <div align="center">
-    <img src="Images/olskercupcakes.png" class="img-fluid">
+    <img src="../Images/olskercupcakes.png" class="img-fluid">
 </div>
 <h1 align="center">Login for at betale for dine CupCakes</h1>
 

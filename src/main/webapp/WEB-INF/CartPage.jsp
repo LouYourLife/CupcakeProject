@@ -17,9 +17,9 @@
         <th>Cupcake sum</th>
     </tr>
 
-    <c:forEach var="element2" items="${requestScope.orders}">
+    <c:forEach var="element" items="${OrderMapper}">
 
-        ${element2}
+        ${element}
         <br>
         <br>
 
