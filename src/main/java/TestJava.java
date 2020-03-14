@@ -5,8 +5,9 @@ import FunctionLayer.User;
 
 public class TestJava {
     public static void main(String[] args) throws LoginSampleException {
-        User user=new User("ken@somewhere.com","kensen","customer");
-        Order order = new Order(user,"Rasberry","Pistacio",26);
-        OrderMapper.deleteOrder(order);
+      //  String username, String top, String bot, int amount, int sum, int id
+        Order e = new Order("jens@somewhere.com","Crispy","Chocolate",7, 77, 1);
+
+        System.out.println(OrderMapper.findID(e));
     }
 }

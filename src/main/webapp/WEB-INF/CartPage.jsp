@@ -10,11 +10,11 @@
 <table cellpadding="2" cellspacing="2" border="0">
     <tr>
         <!--- <th>Fjern</th> -->
+        <th>Ordernummer</th>
         <th>Topping</th>
         <th>Bund</th>
-        <th>Pris</th>
         <th>Antal</th>
-        <th>Muffin(s) pris</th>
+        <th>Cupcake sum</th>
     </tr>
 
     <c:forEach var="element2" items="${requestScope.orders}">
