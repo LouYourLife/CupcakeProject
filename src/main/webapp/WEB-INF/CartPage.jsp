@@ -10,6 +10,7 @@
 <table cellpadding="2" cellspacing="2" border="0">
     <tr>
         <!--- <th>Fjern</th> -->
+        <th>Ordernummer</th>
         <th>Topping</th>
         <th>Bund</th>
         <th>Antal</th>
@@ -18,8 +19,6 @@
 
 
     <h2>Liste over dine ordrer:</h2>
-
-
     <c:forEach var="element2" items="${requestScope.orders}">
 
         ${element2}
@@ -29,11 +28,18 @@
     </c:forEach>
 
 
+
     <form name="login" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="employee">
         <input type="submit" value="Gå tilbage">
     </form>
 
+
+  <!--  <tr>
+        <td colspan="6" align="right">Total</td>
+        <td>${total}</td>
+    </tr>
+-->
 </table>
 <br>
 <a href="${pageContext.request.contextPath }/product">Fortsæt indkøb</a>
