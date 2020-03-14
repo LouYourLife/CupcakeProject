@@ -5,48 +5,59 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%--        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">--%>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <meta charset="utf-8">
         <title>Employee home page</title>
     </head>
     <body>
-    <div class="container">
+    <div align="center">
         <img src="src/main/webapp/WEB-INF/olskercupcakes.png" class="img-fluid"/>
     </div>
 
 
-        <h1>Hello ${sessionScope.email} </h1>
+        <h1 align="center">Hello ${sessionScope.email} </h1>
 
+        <p align="center">You are now logged in as an EMPLOYEE of our wonderful site.</p>
 
-
-        You are now logged in as an EMPLOYEE of our wonderful site.
 
 <%-- TODO: Få siden til at ligne forsiden med farver og opbygning, se Matti's kode senere for sammenligning --%>
 
 <%-- TODO: Man kan sætte beløb direkte ind på en kundes konto, så de får en regning for deres cupcakes --%>
 
-        <form name="login" action="FrontController" method="POST">
+    <div style="text-align: center;display: block">
+        <h2 align="center">Indsæt beløb på kundens konto:</h2>
+        <form name="login" style="display: inline-block; margin-left: auto; margin-right: auto; text-align: left" action="FrontController" method="POST">
             <input type="hidden" name="taget" value="customerPay">
-            <label for="user">Kunde:</label>
-            <br>
-            <input type="text" id="user" name="user" value="">
-            <br>
-            <label for="pay">Beløb der skal betales:</label>
-            <br>
-            <input type="text" id="pay" name="pay" value="">
-            <br><br>
-            <input type="submit" value="Submit">
+
+            <div class="form-group">
+                <input type="text" name="user" class="form-control" value="email">
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="pay" class="form-control" value="0.0">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+    </div>
 
         ${requestScope.addAmMes}
 
-        <%-- En knap som viser ordrerliste og kundeliste --%>
-        <h2>Ordrerliste:</h2>
-        Her vises listen
+    <br>
+    <br>
+    <br>
 
-        <form name="login" action="FrontController" method="POST">
+        <%-- En knap som viser ordrerliste og kundeliste --%>
+        <h2 align="center">Ordrerliste:</h2>
+
+    <div style="text-align: center;display: block">
+        <form name="login" style="display: inline-block; margin-left: auto; margin-right: auto; text-align: left" action="FrontController" method="POST">
             <input type="hidden" name="taget" value="empList">
-            <input type="submit" value="Gå til ordreliste">
+            <button type="submit" class="btn btn-primary">Gå til ordreliste</button>
         </form>
+    </div>
+
 
     </body>
 </html>
