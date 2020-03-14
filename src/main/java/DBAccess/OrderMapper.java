@@ -100,8 +100,11 @@ public class OrderMapper {
                 String bot = rs.getString("bot");
                 int amount = rs.getInt("amount");
                 int sum = rs.getInt("sum");
-                Order userOrder = new Order(user, top, bot, amount);
+
+                Order userOrder = new Order(user, top, bot, amount, sum);
                 orderList.add(userOrder);
+
+
 
                 
             }
