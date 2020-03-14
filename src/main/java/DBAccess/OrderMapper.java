@@ -52,7 +52,10 @@ public class OrderMapper {
             ps.setString(1, order.getUsername());
             ps.execute();
             ResultSet rs = ps.executeQuery();
-            id = rs.getInt("id");
+
+            if(rs.next()){
+                id = rs.getInt("id");
+            }
             return id;
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
