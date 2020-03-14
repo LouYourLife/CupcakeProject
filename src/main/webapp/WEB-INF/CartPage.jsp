@@ -7,38 +7,46 @@
 </head>
 <body>
 
-<table cellpadding="2" cellspacing="2" border="0">
+<h2>Liste over dine ordrer:</h2>
+
+
+<!-- DESIGN TODO ! Skal der være boks i inkøbskurv -->
+
+<table cellpadding="2" cellspacing="2" border="1">
     <tr>
         <!--- <th>Fjern</th> -->
+        <th>Ordernummer</th>
         <th>Topping</th>
         <th>Bund</th>
-        <th>Pris</th>
         <th>Antal</th>
-        <th>Muffin(s) pris</th>
+        <th>Beløb</th>
     </tr>
-    <c:set var="total" value="0"></c:set>
 
-    <c:forEach var="item" items="${sessionScope.cart }">
-        <c:set var="total" value="${total + item.product.price * item.quantity }"></c:set>
+    <br>
+    <c:forEach var="item" items="${requestScope.userOrders}">
+        <c:set var="total" value="${item.sum}"> </c:set>
         <tr>
-            <!---<td align="center">
-                <a href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.id }"
-                   onclick="return confirm('Are you sure?')">Remove</a>
-            </td> -->
-            <td>${item.product.name }</td>
-            <td>${item.product.price }</td>
-            <td>${item.quantity }</td>
-            <td>${item.product.price * item.quantity }</td>
+            <!-- TODO Lav så OrdrerID virker
+            <td>${item.getId}</td>
+            <td>${item.top }</td>
+            <td>${item.bot }</td>
+            <td>${item.amount }</td>
+            <td>${item.sum}</td>
         </tr>
+
     </c:forEach>
+    
     <tr>
+
         <td colspan="6" align="right">Total</td>
         <td>${total}</td>
     </tr>
+
 </table>
 <br>
-<a href="${pageContext.request.contextPath }/product">Fortsæt indkøb</a>
-<button type="button" onclick="${pageContext.request.contextPath }/product"> Gå til betaling </button>
-
+<form name="login" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="customer">
+    <input type="submit" value="Gå tilbage">
+</form>
 </body>
 </html>

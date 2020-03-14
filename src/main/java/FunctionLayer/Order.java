@@ -16,6 +16,8 @@ public class Order {
         this.amount = amount;
     }
 
+
+    //User dreng
     public Order(User user, String top, String bot, int amount, int sum) {
         this.user = user;
         this.top = top;
@@ -24,6 +26,8 @@ public class Order {
         this.sum = sum;
     }
 
+
+    // Strings & ints
     public Order(String username, String top, String bot, int amount, int sum, int id) {
         this.username = username;
         this.top = top;
@@ -33,9 +37,7 @@ public class Order {
         this.id = id;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
     public void setId(int id) {
         this.id = id;

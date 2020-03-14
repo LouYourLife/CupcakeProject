@@ -26,6 +26,38 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+//    måske færdig
+    public static void deleteOrder(Order order) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            //delete from cakeorders.users where user = '123@gmail.com';
+            String SQL = "DELETE FROM orders WHERE id = ?;";
+            PreparedStatement ps = con.prepareStatement( SQL);
+            ps.setInt(1, order.getId());
+            ps.execute();
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
+    public static int findID(Order order) throws LoginSampleException {
+        try {
+            int id = 0;
+            Connection con = Connector.connection();
+            //delete from cakeorders.users where user = '123@gmail.com';
+            String SQL = "select id from cakeorders.orders WHERE user = ?;";
+            PreparedStatement ps = con.prepareStatement( SQL);
+
+            //ps.setInt(2, order.getAmount());
+            ps.setString(1, order.getUsername());
+            ps.execute();
+            ResultSet rs = ps.executeQuery();
+            id = rs.getInt("id");
+            return id;
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
 
     public static int getPrices(String top, String bot) throws LoginSampleException {
         int topprice = 0;
@@ -65,13 +97,15 @@ public class OrderMapper {
             ps.execute();
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
+
+                String uzi = rs.getString("user");
                 String top = rs.getString("top");
                 String bot = rs.getString("bot");
-
-
-
+                int amount = rs.getInt("amount");
+                int sum = rs.getInt("sum");
+                Order userOrder = new Order(user, top, bot, amount, sum);
+                orderList.add(userOrder);
             }
-
 
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );

@@ -16,7 +16,7 @@
 </head>
 <body>
 <div align="center">
-    <img src="olskercupcakes.png" class="img-fluid">
+    <img src="../Images/olskercupcakes.png" class="img-fluid">
 </div>
 <h1 align="center">Login for at betale for dine CupCakes</h1>
 
@@ -65,19 +65,19 @@
 
 </div>
 
-<!--<c:if test = "${requestScope.error!= null}" >-->
+<c:if test = "${requestScope.error!= null}" >
 
-<!--    <h2>Error ! </h2>-->
-<!--    ${requestScope.error}-->
+<h2>Error ! </h2>
+${requestScope.error}
 
-<!--</c:if>-->
+</c:if>
 
 
 <footer class="page-footer font-small blue">
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2020 Copyright: BSHProduction
-        
+
     </div>
     <!-- Copyright -->
 
