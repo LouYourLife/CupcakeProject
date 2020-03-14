@@ -58,6 +58,7 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+
     public static int getPrices(String top, String bot) throws LoginSampleException {
         int topprice = 0;
         int botprice = 0;
@@ -102,16 +103,9 @@ public class OrderMapper {
                 String bot = rs.getString("bot");
                 int amount = rs.getInt("amount");
                 int sum = rs.getInt("sum");
-
-
                 Order userOrder = new Order(user, top, bot, amount, sum);
                 orderList.add(userOrder);
-
-
-
-                
             }
-
 
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );

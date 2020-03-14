@@ -24,9 +24,10 @@
 
     <br>
     <c:forEach var="item" items="${requestScope.userOrders}">
-        <c:set var="total" value="${ item.sum }"> </c:set>
+        <c:set var="total" value="${item.sum}"> </c:set>
         <tr>
-            <td>${item.id }</td>
+            <!-- TODO Lav så OrdrerID virker
+            <td>${item.getId}</td>
             <td>${item.top }</td>
             <td>${item.bot }</td>
             <td>${item.amount }</td>
