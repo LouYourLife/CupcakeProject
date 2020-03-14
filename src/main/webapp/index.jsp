@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav navbar-center">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Ordrer <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Ordrer<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Kunder</a>
@@ -90,11 +90,12 @@
                     <input type="number" name="amount" class="form-control" placeholder="Hvor mange" id="Antal">
                 </div>
                 <br><br>
-                <input type="submit" value="Bestil" class="btn btn-primary">
+                <input type="submit" value="order" class="btn btn-primary">
             </div>
         </div>
 
     </form>
+
 </div>
 <footer class="page-footer font-small blue">
 
