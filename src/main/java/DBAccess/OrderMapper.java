@@ -96,8 +96,17 @@ public class OrderMapper {
             ps.execute();
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
+
+                String uzi = rs.getString("user");
                 String top = rs.getString("top");
                 String bot = rs.getString("bot");
+                int amount = rs.getInt("amount");
+                int sum = rs.getInt("sum");
+
+
+                Order userOrder = new Order(user, top, bot, amount, sum);
+                orderList.add(userOrder);
+
 
 
                 

@@ -10,31 +10,36 @@
 <table cellpadding="2" cellspacing="2" border="0">
     <tr>
         <!--- <th>Fjern</th> -->
+        <th>Ordernummer</th>
         <th>Topping</th>
         <th>Bund</th>
-        <th>Pris</th>
         <th>Antal</th>
-        <th>Muffin(s) pris</th>
+        <th>Total pris</th>
     </tr>
-    <c:set var="total" value="0"></c:set>
 
-    <c:forEach var="item" items="${sessionScope.cart }">
-        <c:set var="total" value="${total + item.product.price * item.quantity }"></c:set>
-        <tr>
-            <!---<td align="center">
-                <a href="${pageContext.request.contextPath }/cart?action=remove&id=${item.product.id }"
-                   onclick="return confirm('Are you sure?')">Remove</a>
-            </td> -->
-            <td>${item.product.name }</td>
-            <td>${item.product.price }</td>
-            <td>${item.quantity }</td>
-            <td>${item.product.price * item.quantity }</td>
-        </tr>
+
+    <h2>Liste over dine ordrer:</h2>
+    <c:forEach var="element2" items="${requestScope.userOrders}">
+
+        ${element2}
+        <br>
+        <br>
+
     </c:forEach>
-    <tr>
+
+
+
+    <form name="login" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="customer">
+        <input type="submit" value="Gå tilbage">
+    </form>
+
+
+  <!--  <tr>
         <td colspan="6" align="right">Total</td>
         <td>${total}</td>
     </tr>
+-->
 </table>
 <br>
 <a href="${pageContext.request.contextPath }/product">Fortsæt indkøb</a>
