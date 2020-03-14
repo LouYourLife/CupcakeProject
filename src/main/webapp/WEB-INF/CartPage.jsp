@@ -36,6 +36,7 @@
     </c:forEach>
     
     <tr>
+
         <td colspan="6" align="right">Total</td>
         <td>${total}</td>
     </tr>
