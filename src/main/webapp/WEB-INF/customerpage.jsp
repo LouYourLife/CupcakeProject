@@ -17,6 +17,14 @@
         <h1>Hello ${sessionScope.email} </h1>
 
 
+        <h2>Ordrerliste:</h2>
+        Her vises listen
+
+        <form name="login" action="FrontController" method="POST">
+            <input type="hidden" name="taget" value="empList">
+            <input type="submit" value="Gå til ordreliste">
+        </form>
+
 
 
 
