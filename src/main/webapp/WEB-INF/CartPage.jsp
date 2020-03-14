@@ -19,7 +19,7 @@
 
 
     <h2>Liste over dine ordrer:</h2>
-    <c:forEach var="element2" items="${requestScope.orders}">
+    <c:forEach var="element2" items="${requestScope.userOrders}">
 
         ${element2}
         <br>
@@ -30,7 +30,7 @@
 
 
     <form name="login" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="employee">
+        <input type="hidden" name="taget" value="customer">
         <input type="submit" value="Gå tilbage">
     </form>
 
