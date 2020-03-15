@@ -22,7 +22,7 @@ public class DeleteOrder extends Command {
         int prices = OrderMapper.getPrices(top, bot);
         int sum = prices * amount;
 
-        int id =OrderMapper.findID(user.getEmail());
+        int id =OrderMapper.findID(user.getEmail(), top);
         Order o = new Order(user.getEmail(),  top,  bot,  amount,  sum,  id);
 
 
