@@ -40,16 +40,15 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
-    public static int findID(Order order) throws LoginSampleException {
+    public static int findID(String username) throws LoginSampleException {
         try {
             int id = 0;
             Connection con = Connector.connection();
             //delete from cakeorders.users where user = '123@gmail.com';
             String SQL = "select id from cakeorders.orders WHERE user = ?;";
             PreparedStatement ps = con.prepareStatement( SQL);
-
             //ps.setInt(2, order.getAmount());
-            ps.setString(1, order.getUsername());
+            ps.setString(1, username);
             ps.execute();
             ResultSet rs = ps.executeQuery();
 
