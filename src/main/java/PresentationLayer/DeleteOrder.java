@@ -13,7 +13,7 @@ public class DeleteOrder extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
-
+        //first draft
         User user = (User) session.getAttribute("user");
         String top = request.getParameter("top");
         String bot = request.getParameter("bot");

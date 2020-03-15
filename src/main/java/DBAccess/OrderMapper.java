@@ -48,15 +48,19 @@ public class OrderMapper {
             String SQL = "select id from cakeorders.orders WHERE user = ? and top =?;";
             PreparedStatement ps = con.prepareStatement( SQL);
             //ps.setInt(2, order.getAmount());
+            //skal muligvis være mere specificeret
             ps.setString(1, username);
             ps.setString(2,top);
             ps.execute();
+
             ResultSet rs = ps.executeQuery();
 
             if(rs.next()){
                 id = rs.getInt("id");
             }
+
             return id;
+
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }
