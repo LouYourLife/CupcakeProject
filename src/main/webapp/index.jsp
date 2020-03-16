@@ -43,7 +43,7 @@
     </form>
 
     <form name="order" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="login">
+        <input type="hidden" name="taget" value="order">
         <div class="shadow p-3 mb-5 bg-white rounded">
             <div class="col-4">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
