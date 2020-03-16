@@ -16,6 +16,11 @@ public class OrderCommand extends Command {
         HttpSession session = request.getSession();
 
         User user = (User) session.getAttribute("user");
+
+        if (user==null){
+            return "login";
+        }
+
         String top = request.getParameter("top");
         String bot = request.getParameter("bot");
         int amount = Integer.parseInt(request.getParameter("amount"));
@@ -28,5 +33,9 @@ public class OrderCommand extends Command {
         request.setAttribute("orderlist", OrderMapper.seeOrders(user));
 
         return "CartPage";
+
+// Et array der sendes rundt og tjekker om man er i systemet, og sender tilbage hvis man ikke er logget ind
+        // If, not logged in, send til log ind side
+
     }
 }
