@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import DBAccess.EmployeeMapper;
 import DBAccess.OrderMapper;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Order;
@@ -16,9 +17,13 @@ public class SeeOrder extends Command {
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        request.setAttribute("user", user);
-        ArrayList<Order> userOrders = OrderMapper.seeOrders(user);
-        request.setAttribute("userOrders", userOrders);
+        System.out.println(user);
+        //request.setAttribute("user", user);
+        //String email = request.getParameter("email");
+        String email = (String) session.getAttribute("email");
+        System.out.println(email);
+        ArrayList<Order> userOrders = OrderMapper.seeOrders2(email);
+        session.setAttribute("userOrders", userOrders);
 
         return "Cart" + "Page";
     }

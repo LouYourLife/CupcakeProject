@@ -3,6 +3,7 @@ package PresentationLayer;
 import DBAccess.OrderMapper;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Order;
+import FunctionLayer.OrderHelper;
 import FunctionLayer.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +20,7 @@ public class DeleteOrder extends Command {
         String bot = request.getParameter("bot");
 
         int amount = Integer.parseInt(request.getParameter("amount"));
-        int prices = OrderMapper.getPrices(top, bot);
+        int prices = OrderHelper.getPrices(request, response);
         int sum = prices * amount;
 
         int id =OrderMapper.findID(user.getEmail(), top);
