@@ -38,6 +38,19 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+    public static void adminDelete(int id) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            //delete from cakeorders.users where user = '123@gmail.com';
+            String SQL = "DELETE FROM orders WHERE id = ?;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ps.execute();
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
     public static int findID(String username, String top) throws LoginSampleException {
         try {
             int id = 0;
@@ -63,6 +76,7 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+
 
     /*public static int getPrices(String top, String bot) throws LoginSampleException {
         int topprice = 0;
@@ -123,6 +137,32 @@ public class OrderMapper {
                 int amount = rs.getInt("amount");
                 int sum = rs.getInt("sum");
                 Order userOrder = new Order(user, top, bot, amount, sum);
+                orderList.add(userOrder);
+            }
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+
+        return orderList;
+    }
+
+    public static ArrayList<Order> seeOrders2(String username) throws LoginSampleException {
+        ArrayList<Order> orderList = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "Select * from orders where user = ?";
+            PreparedStatement ps = con.prepareStatement( SQL);
+            ps.setString(1, username);
+            ps.execute();
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String top = rs.getString("top");
+                String bot = rs.getString("bot");
+                int amount = rs.getInt("amount");
+                int sum = rs.getInt("sum");
+                Order userOrder = new Order(username, top, bot, amount, sum, id);
                 orderList.add(userOrder);
             }
 
