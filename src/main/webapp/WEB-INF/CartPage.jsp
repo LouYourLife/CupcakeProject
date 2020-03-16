@@ -57,7 +57,7 @@
 <h2>Liste over dine ordrer:</h2>
 <!-- DESIGN TODO ! Skal der være boks i inkøbskurv -->
 
-<table cellpadding="2" cellspacing="2" border = "1">
+<table cellpadding="2" cellspacing="2" border = "0">
     <tr>
         <!--- <th>Fjern</th> -->
         <th>Ordernummer</th>
@@ -69,7 +69,7 @@
 
     <br>
 
-    <c:forEach var="item" items="${sessionScope.orderList}">
+    <c:forEach var="item" items="${sessionScope.userOrders}">
         <c:set var="total" value="${item.sum}"> </c:set>
         <tr>
             <!-- TODO Lav så OrdrerID virker -->
