@@ -38,6 +38,19 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+    public static void adminDelete(int id) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            //delete from cakeorders.users where user = '123@gmail.com';
+            String SQL = "DELETE FROM orders WHERE id = ?;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ps.execute();
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
     public static int findID(String username, String top) throws LoginSampleException {
         try {
             int id = 0;
@@ -63,6 +76,7 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+
 
     /*public static int getPrices(String top, String bot) throws LoginSampleException {
         int topprice = 0;
