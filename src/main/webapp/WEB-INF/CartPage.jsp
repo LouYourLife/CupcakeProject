@@ -6,6 +6,53 @@
     <title>Cart Page</title>
 </head>
 <body>
+<h1>Du er nu logget ind som ${sessionScope.email}</h1>
+<h3>Bestil en cupcake : </h3>
+<form name="order" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="order">
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <div class="col-4">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="bot">
+
+                <option selected>Choose...</option>
+                <option value="1">Chocolate</option>
+                <option value="2">Vanilla</option>
+                <option value="3">Nutmeg</option>
+                <option value="4">Pistacio</option>
+                <option value="5">Almond</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Topping</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="top">
+
+                <option selected>Choose...</option>
+                <option value="1">Chocolate</option>
+                <option value="2">Blueberry</option>
+                <option value="3">Raspberry</option>
+                <option value="4">Crispy</option>
+                <option value="5">Strawberry</option>
+                <option value="6">Rum/Raisin</option>
+                <option value="7">Orange</option>
+                <option value="8">Lemon</option>
+                <option value="9">Blue cheese</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Antal</label>
+            <div class="form-group">
+                <label for="Antal"></label>
+
+                <!--                    Her kan man ikke skrive tekst-->
+                <input type="number" name="amount" class="form-control" placeholder="Hvor mange" id="Antal">
+            </div>
+            <br><br>
+            <input type="submit" value="order" class="btn btn-primary">
+        </div>
+    </div>
+
+</form>
 
 <h2>Liste over dine ordrer:</h2>
 
@@ -23,30 +70,39 @@
     </tr>
 
     <br>
-    <c:forEach var="item" items="${requestScope.userOrders}">
+    <c:forEach var="item" items="${sessionScope.orderList}">
         <c:set var="total" value="${item.sum}"> </c:set>
         <tr>
-            <!-- TODO Lav så OrdrerID virker
-            <td>${item.getId}</td>
-            <td>${item.top }</td>
-            <td>${item.bot }</td>
-            <td>${item.amount }</td>
+            <!-- TODO Lav så OrdrerID virker --!>
+            <td>${item.id}</td>
+            <td>${item.top}</td>
+            <td>${item.bot}</td>
+            <td>${item.amount}</td>
             <td>${item.sum}</td>
         </tr>
 
     </c:forEach>
+
     
     <tr>
 
         <td colspan="6" align="right">Total</td>
-        <td>${total}</td>
+        <td>{total}</td>
     </tr>
 
 </table>
 <br>
+
+
 <form name="login" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="customer">
     <input type="submit" value="Gå tilbage">
+</form>
+
+<br>
+<form name="logout" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="logout">
+    <input type="submit" value= "Logout">
 </form>
 </body>
 </html>

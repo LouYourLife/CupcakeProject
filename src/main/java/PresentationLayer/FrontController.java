@@ -5,8 +5,13 @@
  */
 package PresentationLayer;
 
+import DBAccess.OrderMapper;
+import FunctionLayer.Bot;
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Top;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +37,10 @@ public class FrontController extends HttpServlet {
     protected void processRequest( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
         try {
+            ArrayList<Bot> bottoms = OrderMapper.getBots();
+            ArrayList<Top> toppings = OrderMapper.getTops();
+            request.setAttribute("bottoms", bottoms);
+            request.setAttribute("toppings", toppings);
             Command action = Command.from( request );
             String view = action.execute( request, response );
             if(view == "index"){

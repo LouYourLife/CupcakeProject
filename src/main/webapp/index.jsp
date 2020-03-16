@@ -90,6 +90,11 @@
     </form>
 
 </div>
+<br>
+<form name="logout" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="logout">
+    <input type="submit" value= "Logout">
+</form>
 <br><br><br><br>
 <footer class="page-footer font-small blue">
 

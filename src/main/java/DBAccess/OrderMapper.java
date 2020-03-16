@@ -1,8 +1,6 @@
 package DBAccess;
 
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.Order;
-import FunctionLayer.User;
+import FunctionLayer.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -72,26 +70,40 @@ public class OrderMapper {
         int prices = 0;
         try {
             Connection con = Connector.connection();
-            Connection con2 = Connector.connection();
-            String SQL = "Select topprice where top = ?";
+            //Connection con2 = Connector.connection();
+            String SQL = "Select topprice from toppings where top = ?";
             PreparedStatement ps = con.prepareStatement( SQL);
             ps.setString(1, top);
-            ps.execute();
             ResultSet rs = ps.executeQuery();
-            topprice = rs.getInt("topprice");
+            while(rs.next()) {
+                topprice = rs.getInt("topprice");
+            }
 
-            SQL = "Select botprice where bot = ?";
-            ps = con.prepareStatement( SQL);
-            ps.setString(1, bot);
-            ps.execute();
-            ResultSet rs2 = ps.executeQuery();
-            botprice = rs2.getInt("botprice");
+            botprice = getBotPrices(bot);
 
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }
         prices = topprice + botprice;
         return prices;
+    }
+
+    public static int getBotPrices(String bot) throws LoginSampleException {
+        int botprice = 0;
+        try {
+            Connection con = Connector.connection();
+            String SQL = "Select topprice from bottoms where bot = ?";
+            PreparedStatement ps = con.prepareStatement( SQL);
+            ps.setString(1, bot);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                botprice = rs.getInt("botprice");
+            }
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+        return botprice;
     }
 
     public static ArrayList<Order> seeOrders(User user) throws LoginSampleException {
@@ -121,5 +133,45 @@ public class OrderMapper {
         return orderList;
     }
 
+    public static ArrayList<Bot> getBots() throws LoginSampleException {
+        ArrayList<Bot> bottoms = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "Select * from bottoms";
+            PreparedStatement ps = con.prepareStatement( SQL);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                String name = rs.getString("bot");
+                int botprice = rs.getInt("botprice");
+                Bot bot = new Bot(name, botprice);
+                bottoms.add(bot);
+            }
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+
+        return bottoms;
+    }
+    public static ArrayList<Top> getTops() throws LoginSampleException {
+        ArrayList<Top> toppings = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "Select * from toppings";
+            PreparedStatement ps = con.prepareStatement( SQL);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                String name = rs.getString("top");
+                int topprice = rs.getInt("topprice");
+                Top top = new Top(name, topprice);
+                toppings.add(top);
+            }
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+
+        return toppings;
+    }
 
 }
