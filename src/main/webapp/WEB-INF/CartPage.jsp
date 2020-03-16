@@ -1,11 +1,13 @@
 <!--- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> -->
+
 <html>
 <head>
     <title>Cart Page</title>
 </head>
 <body>
+<%@include file="../Includes/Header2.inc"%>
 <h1>Du er nu logget ind som ${sessionScope.email}</h1>
 <h3>Bestil en cupcake : </h3>
 <form name="order" action="FrontController" method="POST">

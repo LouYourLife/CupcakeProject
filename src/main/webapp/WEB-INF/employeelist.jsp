@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-
+<%@include file="../Includes/Header2.inc"%>
 <div align="center">
     <img src="src/main/webapp/WEB-INF/olskercupcakes.png" class="img-fluid"/>
 </div>

@@ -20,7 +20,7 @@ public class AdminDeleteOrder extends Command {
         int id;
 
 // skal fåes fra table slet by ID
-        OrderMapper.adminDelete(id);
+        //OrderMapper.adminDelete(id);
 
         return "CartPage";
     }
