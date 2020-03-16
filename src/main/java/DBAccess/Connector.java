@@ -13,7 +13,11 @@ public class Connector {
 
     private static final String URL = "jdbc:mysql://localhost:3306/cakeorders?serverTimezone=CET&useSSL=false";
     private static final String USERNAME = "root";
+<<<<<<< HEAD
     private static final String PASSWORD = "1234";
+=======
+    private static final String PASSWORD = "AtM12K13BoC185";
+>>>>>>> 2091e99c85845a2458958055bdfa850b29c53991
 
     private static Connection singleton;
 

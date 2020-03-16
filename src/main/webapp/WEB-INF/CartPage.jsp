@@ -61,6 +61,10 @@
 
 <table cellpadding="2" cellspacing="2" border="0">
 
+<<<<<<< HEAD
+=======
+<table cellpadding="2" cellspacing="2" border = "0">
+>>>>>>> 2091e99c85845a2458958055bdfa850b29c53991
     <tr>
         <!--- <th>Fjern</th> -->
         <th>Ordernummer</th>
@@ -72,7 +76,7 @@
 
     <br>
 
-    <c:forEach var="item" items="${sessionScope.orderList}">
+    <c:forEach var="item" items="${sessionScope.userOrders}">
         <c:set var="total" value="${item.sum}"> </c:set>
         <tr>
             <!-- TODO Lav så OrdrerID virker -->
