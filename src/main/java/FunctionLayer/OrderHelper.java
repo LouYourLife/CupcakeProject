@@ -51,12 +51,12 @@ public class OrderHelper {
 
             int prices = 0;
             for (Top top : toppings) {
-                if (topname == top.getName()) {
+                if (topname.equals(top.getName())) {
                     prices += top.getPrice();
                 }
             }
             for (Bot bot : bottoms) {
-                if (botname == bot.getName()){
+                if (botname.equals(bot.getName())){
                     prices += bot.getPrice();
                 }
             }
