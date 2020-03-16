@@ -55,9 +55,9 @@
 </form>
 
 <h2>Liste over dine ordrer:</h2>
-<!-- DESIGN TODO ! Skal der være boks i inkøbskurv -->
+<!-- DESIGN TODO ! Skal der være boks i indkøbskurv -->
 
-<table cellpadding="2" cellspacing="2" border="1">
+<table cellpadding="2" cellspacing="2" border="0">
     <tr>
         <!--- <th>Fjern</th> -->
         <th>Ordernummer</th>
