@@ -3,6 +3,7 @@ package PresentationLayer;
 import DBAccess.OrderMapper;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Order;
+import FunctionLayer.OrderHelper;
 import FunctionLayer.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,13 +19,14 @@ public class OrderCommand extends Command {
         String top = request.getParameter("top");
         String bot = request.getParameter("bot");
         int amount = Integer.parseInt(request.getParameter("amount"));
-        int prices = OrderMapper.getPrices(top, bot);
+        int prices = OrderHelper.getPrices(request, response);           //OrderMapper.getPrices(top, bot);
         int sum = prices * amount;
 
         Order order = new Order(user, top, bot, amount, sum);
-
         OrderMapper.makeOrder(order);
 
-        return "Cart" + "Page";
+        request.setAttribute("orderlist", OrderMapper.seeOrders(user));
+
+        return "CartPage";
     }
 }
