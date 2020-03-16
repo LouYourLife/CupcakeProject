@@ -13,8 +13,20 @@ public class DeleteOrder extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
+        //first draft
+        User user = (User) session.getAttribute("user");
+        String top = request.getParameter("top");
+        String bot = request.getParameter("bot");
+
+        int amount = Integer.parseInt(request.getParameter("amount"));
+        int prices = OrderMapper.getPrices(top, bot);
+        int sum = prices * amount;
+
+        int id =OrderMapper.findID(user.getEmail(), top);
+        Order o = new Order(user.getEmail(),  top,  bot,  amount,  sum,  id);
 
 
+        OrderMapper.deleteOrder(o);
 
         return "CartPage";
     }
