@@ -30,7 +30,7 @@ public class OrderMapper {
             Connection con = Connector.connection();
             //delete from cakeorders.users where user = '123@gmail.com';
             String SQL = "DELETE FROM orders WHERE id = ?;";
-            PreparedStatement ps = con.prepareStatement( SQL);
+            PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, order.getId());
             ps.execute();
 
@@ -38,12 +38,12 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
-    public static int findID(String username,String top) throws LoginSampleException {
+    public static int findID(String username, String top) throws LoginSampleException {
         try {
             int id = 0;
             Connection con = Connector.connection();
             //select id from cakeorders.orders WHERE user = "jens@somewhere.com" and top= "Crispy";
-            String SQL = "select id from cakeorders.orders WHERE user = ? and top =?;";
+            String SQL = "select id from cakeorders.orders WHERE user = ? and top = ?;";
             PreparedStatement ps = con.prepareStatement( SQL);
             //ps.setInt(2, order.getAmount());
             //skal muligvis være mere specificeret
@@ -64,7 +64,7 @@ public class OrderMapper {
         }
     }
 
-    public static int getPrices(String top, String bot) throws LoginSampleException {
+    /*public static int getPrices(String top, String bot) throws LoginSampleException {
         int topprice = 0;
         int botprice = 0;
         int prices = 0;
@@ -104,7 +104,7 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
         return botprice;
-    }
+    }*/
 
     public static ArrayList<Order> seeOrders(User user) throws LoginSampleException {
         ArrayList<Order> orderList = new ArrayList<>();

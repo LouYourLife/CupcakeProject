@@ -22,7 +22,7 @@ public class OrderHelper {
             String top = request.getParameter("top");
             String bot = request.getParameter("bot");
             int amount = Integer.parseInt(request.getParameter("amount"));
-            int prices = OrderHelper.getPrices(request, response);           //OrderMapper.getPrices(top, bot);
+            int prices = OrderHelper.getPrices(request, response);
             int sum = prices * amount;
 
             order = new Order(user, top, bot, amount, sum);
@@ -43,7 +43,7 @@ public class OrderHelper {
 
             return list;
         }
-        public static int getPrices( HttpServletRequest request, HttpServletResponse response ){
+        public static int getPrices(HttpServletRequest request, HttpServletResponse response){
             ArrayList<Top> toppings = (ArrayList<Top>) request.getAttribute("toppings");
             ArrayList<Bot> bottoms = (ArrayList<Bot>) request.getAttribute("bottoms");
             String topname = request.getParameter("top");
@@ -62,8 +62,6 @@ public class OrderHelper {
             }
 
             return prices;
-
-
         }
 
 

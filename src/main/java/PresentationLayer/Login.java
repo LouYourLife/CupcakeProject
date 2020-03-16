@@ -35,18 +35,19 @@ public class Login extends Command {
         session.setAttribute( "role", user.getRole() );
         session.setAttribute("email", email);  // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
 
-        if (session.getAttribute("user") != null){
-            if (request.getParameter("top") != null && request.getParameter("bot") != null && request.getParameter("amount") != null){
+        if (user.getRole() != "employee"){
+            if (request.getParameter("top") != null && request.getParameter("bot") != null && request.getParameter("amount") != null) {
                 FunctionLayer.OrderHelper.makeOrder(request, response);
+
+                return "CartPage";
             }
-            return "CartPage";
         }
 
         if(user.getRole().equals("customer")){
             return "CartPage";
         }
 
-        return user.getRole() + "page";
+        return "employee" + "page";
     }
 
 }
