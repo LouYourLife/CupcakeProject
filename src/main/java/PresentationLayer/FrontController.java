@@ -41,8 +41,10 @@ public class FrontController extends HttpServlet {
             ArrayList<Top> toppings = OrderMapper.getTops();
             request.setAttribute("bottoms", bottoms);
             request.setAttribute("toppings", toppings);
+
             Command action = Command.from( request );
             String view = action.execute( request, response );
+
             if(view == "index"){
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
