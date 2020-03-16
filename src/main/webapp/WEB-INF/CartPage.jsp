@@ -16,11 +16,11 @@
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="bot">
 
                 <option selected>Choose...</option>
-                <option value="1">Chocolate</option>
-                <option value="2">Vanilla</option>
-                <option value="3">Nutmeg</option>
-                <option value="4">Pistacio</option>
-                <option value="5">Almond</option>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Nutmeg">Nutmeg</option>
+                <option value="Pistacio">Pistacio</option>
+                <option value="Almond">Almond</option>
             </select>
         </div>
         <div class="col-4">
@@ -28,15 +28,15 @@
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="top">
 
                 <option selected>Choose...</option>
-                <option value="1">Chocolate</option>
-                <option value="2">Blueberry</option>
-                <option value="3">Raspberry</option>
-                <option value="4">Crispy</option>
-                <option value="5">Strawberry</option>
-                <option value="6">Rum/Raisin</option>
-                <option value="7">Orange</option>
-                <option value="8">Lemon</option>
-                <option value="9">Blue cheese</option>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Blueberry">Blueberry</option>
+                <option value="Raspberry">Raspberry</option>
+                <option value="Crispy">Crispy</option>
+                <option value="Strawberry">Strawberry</option>
+                <option value="Rum/Raisin">Rum/Raisin</option>
+                <option value="Orange">Orange</option>
+                <option value="Lemon">Lemon</option>
+                <option value="Blue cheese">Blue cheese</option>
             </select>
         </div>
         <div class="col-4">
@@ -57,7 +57,7 @@
 <h2>Liste over dine ordrer:</h2>
 <!-- DESIGN TODO ! Skal der være boks i inkøbskurv -->
 
-<table cellpadding="2" cellspacing="2" border="1">
+<table cellpadding="2" cellspacing="2" border = "1">
     <tr>
         <!--- <th>Fjern</th> -->
         <th>Ordernummer</th>
