@@ -15,16 +15,9 @@ public class AdminDeleteOrder extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
         //first draft
-        User user = (User) session.getAttribute("user");
-        String top = request.getParameter("top");
-        String bot = request.getParameter("bot");
 
-        int amount = Integer.parseInt(request.getParameter("amount"));
-        int prices = OrderHelper.getPrices(request, response);
-        int sum = prices * amount;
 
-        int id =OrderMapper.findID(user.getEmail(), top);
-        Order o = new Order(user.getEmail(),  top,  bot,  amount,  sum,  id);
+        int id;
 
 // skal fåes fra table slet by ID
         OrderMapper.adminDelete(id);
