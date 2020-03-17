@@ -7,14 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <title>MainPage</title>
-    <meta charset="utf-8">
-</head>
-<body>
 <%@include file="../Includes/Header2.inc"%>
 <div align="center">
 </div>
@@ -77,16 +69,4 @@ ${requestScope.error}
     <input type="submit" value= "Logout">
 </form>
 
-<footer class="page-footer font-small blue">
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright: BSHProduction
-
-    </div>
-    <!-- Copyright -->
-
-</footer>
-
-
-</body>
-</html>
+<%@include file="../Includes/Footer.inc"%>

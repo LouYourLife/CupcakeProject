@@ -17,6 +17,7 @@ public class Connector {
 
 
 
+
     private static Connection singleton;
 
     public static void setConnection( Connection con ) {
