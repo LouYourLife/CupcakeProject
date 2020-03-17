@@ -1,21 +1,4 @@
-<<<<<<< HEAD
-<!---
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
--->
-=======
-<!--- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> -->
 
->>>>>>> 80d35e8f19b18b30820720b1be84950f8d0d4dee
-<html>
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <title>Cart Page</title>
-</head>
-<body>
 <%@include file="../Includes/Header2.inc"%>
 <h1>Du er nu logget ind som ${sessionScope.email}</h1>
 <h3>Bestil en cupcake : </h3>
@@ -121,5 +104,4 @@
     <input type="hidden" name="taget" value="logout">
     <input type="submit" value="Logout">
 </form>
-</body>
-</html>
+<%@include file="../Includes/Footer.inc"%>

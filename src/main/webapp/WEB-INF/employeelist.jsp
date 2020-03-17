@@ -2,20 +2,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <meta charset="utf-8">
-    <title>Employee</title>
 
-    <style>
-        .vl {
-            border-left: 6px solid black;
-            height: 500px;
-        }
-    </style>
-</head>
-<body>
 <%@include file="../Includes/Header2.inc"%>
 <div align="center">
     <img src="src/main/webapp/WEB-INF/olskercupcakes.png" class="img-fluid"/>
@@ -83,5 +70,4 @@
     <button type="submit" class="btn btn-primary">Gå tilbage</button>
 </form>
 
-</body>
-</html>
+<%@include file="../Includes/Footer.inc"%>
