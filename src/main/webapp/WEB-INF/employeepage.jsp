@@ -59,6 +59,22 @@
         </form>
     </div>
 <br>
+
+    <h2 align="center">Slet ordre</h2>
+
+    <form name="deleteOrder" action="FrontController" align="center">
+        <input type="hidden" name="taget" value="adminDelete">
+        <label for="deleteTekst">Ordre der skal slettes:</label><br>
+        <input type="text" id="deleteTekst" name="deleteID"  value="Indtast orderens ID"><br>
+        <br>
+        <input type="submit" value="Slet">
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+
     <form name="logout" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="logout">
         <input type="submit" value= "Logout">
