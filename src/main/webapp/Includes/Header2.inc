@@ -14,4 +14,4 @@
 <body>
 
 <div class="container" align="center">
-    <img src="../Images/olskercupcakes.png" class="img-fluid">
+    <img src="Images/olskercupcakes.png" class="img-fluid">
