@@ -59,12 +59,8 @@
 <h2>Liste over dine ordrer:</h2>
 <!-- DESIGN TODO ! Skal der være boks i indkøbskurv -->
 
-<table cellpadding="2" cellspacing="2" border="0">
-
-<<<<<<< HEAD
-=======
 <table cellpadding="2" cellspacing="2" border = "0">
->>>>>>> 2091e99c85845a2458958055bdfa850b29c53991
+
     <tr>
         <!--- <th>Fjern</th> -->
         <th>Ordernummer</th>
