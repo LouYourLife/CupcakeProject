@@ -17,7 +17,7 @@ public class AdminDeleteOrder extends Command {
         //first draft
         int id = Integer.parseInt(request.getParameter("deleteID"));
 // skal fåes fra table slet by ID
-        OrderMapper.adminDelete(id);
+        //OrderMapper.adminDelete(id);
 
         return "employee" + "page";
     }

@@ -15,8 +15,8 @@
     <meta charset="utf-8">
 </head>
 <body>
+<%@include file="../Includes/Header2.inc"%>
 <div align="center">
-    <img src="../Images/olskercupcakes.png" class="img-fluid">
 </div>
 <h1 align="center">Login for at betale for dine CupCakes</h1>
 

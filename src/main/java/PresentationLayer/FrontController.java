@@ -6,17 +6,21 @@
 package PresentationLayer;
 
 import DBAccess.OrderMapper;
+import DBAccess.UserMapper;
 import FunctionLayer.Bot;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Top;
+import FunctionLayer.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
 
@@ -24,6 +28,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet( name = "FrontController", urlPatterns = { "/FrontController" } )
 public class FrontController extends HttpServlet {
+
 
     /**
      Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,23 +39,37 @@ public class FrontController extends HttpServlet {
      @throws ServletException if a servlet-specific error occurs
      @throws IOException if an I/O error occurs
      */
-    protected void processRequest( HttpServletRequest request, HttpServletResponse response )
-            throws ServletException, IOException {
+    protected void processRequest( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+
+
+
+        ServletContext servletContext = getServletContext();
+
+        HttpSession session = request.getSession();
+
         try {
             ArrayList<Bot> bottoms = OrderMapper.getBots();
             ArrayList<Top> toppings = OrderMapper.getTops();
+            ArrayList<User> users = UserMapper.getUsers();
             request.setAttribute("bottoms", bottoms);
             request.setAttribute("toppings", toppings);
+            request.setAttribute("users", users);
+
             Command action = Command.from( request );
             String view = action.execute( request, response );
+
             if(view == "index"){
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
             request.getRequestDispatcher("/WEB-INF/" + view + ".jsp" ).forward( request, response );
+
+
         } catch ( LoginSampleException ex ) {
             request.setAttribute( "error", ex.getMessage() );
             request.getRequestDispatcher(  "/WEB-INF/" + "login.jsp" ).forward( request, response );
         }
+
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -63,8 +82,10 @@ public class FrontController extends HttpServlet {
      @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet( HttpServletRequest request, HttpServletResponse response )
-            throws ServletException, IOException {
+    protected void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+
+
+
         processRequest( request, response );
     }
 

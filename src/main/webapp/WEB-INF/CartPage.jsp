@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 <!---
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 -->
+=======
+<!--- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> -->
+
+>>>>>>> 80d35e8f19b18b30820720b1be84950f8d0d4dee
 <html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>Cart Page</title>
 </head>
 <body>
+<%@include file="../Includes/Header2.inc"%>
 <h1>Du er nu logget ind som ${sessionScope.email}</h1>
 <h3>Bestil en cupcake : </h3>
 <form name="order" action="FrontController" method="POST">
@@ -59,6 +68,13 @@
 <h2>Liste over dine ordrer:</h2>
 <!-- DESIGN TODO ! Skal der være boks i indkøbskurv -->
 
+<div class="container">
+    <c:forEach var="item" items="${sessionScope.userOrders}">
+        ${item}
+        <br>
+    </c:forEach>
+</div>
+<%--
 <table cellpadding="2" cellspacing="2" border = "0">
 
     <tr>
@@ -70,27 +86,29 @@
         <th>Beløb</th>
     </tr>
 
+
     <br>
 
-    <c:forEach var="item" items="${sessionScope.userOrders}">
-        <c:set var="total" value="${item.sum}"> </c:set>
         <tr>
+        <c:forEach var="item" items="${sessionScope.userOrders}">
+            <c:set var="total" value="${item.sum}"> </c:set>
             <!-- TODO Lav så OrdrerID virker -->
             <td>${item.id}</td>
             <td>${item.top}</td>
             <td>${item.bot}</td>
             <td>${item.amount}</td>
             <td>${item.sum}</td>
+        </c:forEach>
         </tr>
 
-    </c:forEach>
+
     <tr>
         <td colspan="6" align="right">Total</td>
         <td>{total}</td>
     </tr>
 
 </table>
-<br>
+<br>--%>
 
 
 <form name="login" action="FrontController" method="POST">
