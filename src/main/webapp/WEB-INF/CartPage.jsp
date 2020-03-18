@@ -53,7 +53,7 @@
 </form>
 
 <div class="shadow p-3 mb-5 bg-white rounded">
-<h2>Liste over dine ordrer:</h2>
+
 <!-- DESIGN TODO ! Skal der være boks i indkøbskurv? -->
 
 
@@ -93,6 +93,14 @@
     <input type="hidden" name="taget" value="logout">
     <input type="submit" value= "Logout" class="btn btn-outline-dark">
 </form>
+
+    <c:if test = "${requestScope.errorDel!= null}" >
+
+    <h2>Error ! </h2>
+        ${requestScope.errorDel}
+        <p>Order not found in your cart</p>
+
+    </c:if>
 
 
 <div style="text-align: center; display: block">

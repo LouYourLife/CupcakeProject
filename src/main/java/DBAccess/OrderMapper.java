@@ -25,7 +25,7 @@ public class OrderMapper {
         }
     }
 //    måske færdig
-    public static void deleteOrder(int id, String email) throws LoginSampleException {
+    public static void deleteOrder(int id, String email) throws LoginSampleException, SQLException {
         try {
             Connection con = Connector.connection();
             //delete from cakeorders.users where user = '123@gmail.com';
@@ -36,7 +36,9 @@ public class OrderMapper {
             ps.execute();
 
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
+            throw new SQLException("You do not have such an order");
+
+           // throw new LoginSampleException( "You do not have such an order" );
         }
 
 
