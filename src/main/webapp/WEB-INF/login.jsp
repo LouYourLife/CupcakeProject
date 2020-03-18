@@ -19,6 +19,7 @@
                 <form name="login" action="FrontController" method="POST">
                     <input type="hidden" name="taget" value="login">
 
+
                     <div class="form-group">
                         <input type="email" name="email" class="form-control" value="email">
                     </div>

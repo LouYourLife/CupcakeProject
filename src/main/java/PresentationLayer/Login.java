@@ -10,6 +10,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,13 +50,20 @@ public class Login extends Command {
 
         Map<String, String> inde = new HashMap<>();
         inde.put(email,password);
-        if (user.getRole() != "employee"){
-            if (request.getParameter("top") != null && request.getParameter("bot") != null && request.getParameter("amount") != null) {
-                FunctionLayer.OrderHelper.makeOrder(request, response);
+        if (!(user.getRole().equalsIgnoreCase( "employee"))){
+            //if (request.getParameter("top") != null && request.getParameter("bot") != null && request.getParameter("amount") != null) {
 
-                return "index";
+
+            //FunctionLayer.OrderHelper.makeOrder(request, response);
+
+                ArrayList<Order> userOrders = OrderMapper.seeOrders2(email);
+
+                System.out.println("Størrelsen er: " + userOrders.size());
+                session.setAttribute("userOrders", userOrders);
+
+               // return "index";
             }
-        }
+        //}
 
         if(user.getRole().equals("customer")){
             return "CartPage";

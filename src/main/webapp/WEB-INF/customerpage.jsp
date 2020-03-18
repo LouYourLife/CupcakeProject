@@ -16,7 +16,7 @@
         Her vises listen
 
         <form name="login" action="FrontController" method="POST">
-            <input type="hidden" name="taget" value="seeOrders">
+            <input type="hidden" name="taget" value="SeeOrders">
             <input type="submit" value="Gå til ordreliste">
         </form>
 

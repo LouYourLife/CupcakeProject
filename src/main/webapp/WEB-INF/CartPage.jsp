@@ -63,7 +63,7 @@
     </c:forEach>
 </div>
 
-<table cellpadding="10" cellspacing="10" border = "0">
+<table cellpadding="2" cellspacing="2" border = "0">
 
     <tr>
         <!--- <th>Fjern</th> -->
@@ -78,7 +78,7 @@
     <br>
 
         <tr>
-        <c:forEach var="item" items="${sessionScope.orderList}">
+        <c:forEach var="item" items="${sessionScope.userOrders}">
 
             <!-- TODO Lav så OrdrerID virker  -->
             <td>${item.id}</td>
