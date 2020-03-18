@@ -34,7 +34,7 @@
         </nav>
     </div>
 
-    <h1 align="center">Velkommen ombord</h1>
+    <h1 align="center">Velkommen ombord ${sessionScope.email}</h1>
     <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
 
 
