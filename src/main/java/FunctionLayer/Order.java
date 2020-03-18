@@ -89,7 +89,9 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Ordre " + getId() + " er bestilt af " + getUsername() + ". " + getAmount() + " cupcakes med " + getBot() + " bund og " +
-                getTop() + " på toppen. Det bliver " + getSum() + " DKK i alt.";
+        /*return "Ordre " + getId() + " er bestilt af " + getUsername() + ". " + getAmount() + " cupcakes med " + getBot() + " bund og " +
+                getTop() + " på toppen. Det bliver " + getSum() + " DKK i alt.";*/
+        return "Ordre " + getId() + ": " + getUsername() + "\n" + "Cupcakes med " + getBot() + " og " + getTop() + ". Antal: " +
+                getAmount() + "\n" + "Betal: " + getSum() + " DKK";
     }
 }

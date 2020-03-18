@@ -51,58 +51,42 @@
     </div>
 
 </form>
+
 <div class="shadow p-3 mb-5 bg-white rounded">
 <h2>Liste over dine ordrer:</h2>
 <!-- DESIGN TODO ! Skal der være boks i indkøbskurv? -->
 
-<div class="container">
-    <c:forEach var="item" items="${sessionScope.userOrders}">
-        ${item}
-
-        <br>
-    </c:forEach>
-</div>
-
-<table cellpadding="2" cellspacing="2" border = "0">
-
-    <tr>
-        <!--- <th>Fjern</th> -->
-        <th>Ordernummer</th>
-        <th>Topping</th>
-        <th>Bund</th>
-        <th>Antal</th>
-        <th>Beløb</th>
-    </tr>
-
-
-    <br>
-
-        <tr>
-        <c:forEach var="item" items="${sessionScope.userOrders}">
-
-            <!-- TODO Lav så OrdrerID virker  -->
-            <td>${item.id}</td>
-            <td>${item.top}</td>
-            <td>${item.bot}</td>
-            <td>${item.amount}</td>
-            <td>${item.sum}</td>
-        </c:forEach>
-        </tr>
-
-<%--    <tr>--%>
-<%--        <c:set var="total" value="${item.sum}"> </c:set>--%>
-<%--        <td colspan="10" align="right">Total</td>--%>
-<%--        <td>{total}</td>--%>
-<%--    </tr>--%>
 
 </table>
 <br>
+<div class="container">
+    <h2>Liste over dine ordrer:</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Ordrenummer</th>
+            <th>Topping</th>
+            <th>Bund</th>
+            <th>Antal</th>
+            <th>Beløb</th>
+        </tr>
+        </thead>
+        <tbody>
 
+        <c:forEach var="order" items="${sessionScope.userOrders}">
+        <tr>
+            <td>${order.id}</td>
+            <td>${order.top}</td>
+            <td>${order.bot}</td>
+            <td>${order.amount}</td>
+            <td>${order.sum}</td>
+        </tr>
 
-<form name="login" action="FrontController" method="POST">
-    <input type="hidden" name="taget" value="loginpage">
-    <input type="submit" value="Gå tilbage">
-</form>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+
 
 <br>
 <form align="center" name="logout" action="FrontController" method="POST">
@@ -111,3 +95,4 @@
 </form>
     </div>
 <%@include file="../Includes/Footer.inc"%>
+

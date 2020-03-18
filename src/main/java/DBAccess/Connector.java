@@ -15,6 +15,7 @@ public class Connector {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "cph39178";
 
+
     private static Connection singleton;
 
     public static void setConnection( Connection con ) {
