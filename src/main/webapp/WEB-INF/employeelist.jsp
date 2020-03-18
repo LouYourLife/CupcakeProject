@@ -2,6 +2,8 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -10,13 +12,13 @@
 
     <style>
         .vl {
-            border-left: 6px solid black;
+            border-left: 6px white;
             height: 500px;
         }
     </style>
 </head>
 <body>
-<%@include file="../Includes/Header2.inc"%>
+<%@include file="../Includes/Header2.inc" %>
 <div align="center">
     <img src="src/main/webapp/WEB-INF/olskercupcakes.png" class="img-fluid"/>
 </div>
@@ -24,7 +26,7 @@
 <div align="center">
     <table>
         <tr>
-            <td>
+            <td valign="top">
                 <h2>Liste over kunder:</h2>
 
                 <c:forEach var="element" items="${requestScope.users}">
@@ -35,10 +37,10 @@
 
                 </c:forEach>
             </td>
-            <td>
+            <td valign="top">
                 <div class="vl"></div>
             </td>
-            <td>
+            <td valign="top">
                 <h2>Liste over ordrer:</h2>
 
                 <c:forEach var="element2" items="${requestScope.orders}">
@@ -79,7 +81,7 @@
 
 <form name="login" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="employee">
-<%--    <input type="submit" value="Gå tilbage">--%>
+    <%--    <input type="submit" value="Gå tilbage">--%>
     <button type="submit" class="btn btn-primary">Gå tilbage</button>
 </form>
 
