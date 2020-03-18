@@ -88,11 +88,7 @@
 </div>
 
 
-<br>
-<form align="center" name="logout" action="FrontController" method="POST">
-    <input type="hidden" name="taget" value="logout">
-    <input type="submit" value= "Logout" class="btn btn-outline-dark">
-</form>
+
 
     <c:if test = "${requestScope.errorDel!= null}" >
 
@@ -113,7 +109,11 @@
         <button type="submit" class="btn btn-primary">Slet</button>
     </form>
 </div>
-
-
+</div>
+    <br>
+    <form align="center" name="logout" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="logout">
+        <input type="submit" value= "Logout" class="btn btn-outline-dark">
+    </form>
 <%@include file="../Includes/Footer.inc"%>
 

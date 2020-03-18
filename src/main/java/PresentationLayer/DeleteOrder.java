@@ -25,12 +25,15 @@ public class DeleteOrder extends Command {
 
         try {
             OrderMapper.deleteOrder(id,user.getEmail());
-        } catch (SQLException e) {
+        } catch (Exception e) {
+
             request.setAttribute("errorDel" , e.getMessage() );
             e.printStackTrace();
         }
         ArrayList<Order> userOrders = OrderMapper.seeOrders2((String) session.getAttribute("email"));
+
         session.setAttribute("userOrders", userOrders);
+
         return "CartPage";
     }
 }
