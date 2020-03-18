@@ -23,7 +23,9 @@ public class Register extends Command {
             session.setAttribute( "role", user.getRole() );
 
 
-
+            if (user.getRole().equals("customer")){
+                return "CartPage";
+            }
             return user.getRole() + "page";
         } else {
             throw new LoginSampleException( "the two passwords did not match" );
