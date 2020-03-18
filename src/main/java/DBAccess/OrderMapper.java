@@ -168,7 +168,6 @@ public class OrderMapper {
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }
-        System.out.println("Størrelsen er: " + orderList.size());
         return orderList;
     }
 
