@@ -5,7 +5,6 @@
 
 <%@include file="../Includes/Header2.inc"%>
 <div align="center">
-    <img src="src/main/webapp/WEB-INF/olskercupcakes.png" class="img-fluid"/>
 </div>
 
 <div align="center">
@@ -68,6 +67,11 @@
     <input type="hidden" name="taget" value="employee">
 <%--    <input type="submit" value="Gå tilbage">--%>
     <button type="submit" class="btn btn-primary">Gå tilbage</button>
+</form>
+
+<form align="center" name="logout" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
 </form>
 
 <%@include file="../Includes/Footer.inc"%>

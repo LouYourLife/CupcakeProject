@@ -5,7 +5,6 @@
 
     <%@include file="../Includes/Header2.inc"%>
     <div align="center">
-        <img src="src/main/webapp/WEB-INF/olskercupcakes.png" class="img-fluid"/>
     </div>
 
 
@@ -59,7 +58,7 @@
         <label for="deleteTekst">Ordre der skal slettes:</label><br>
         <input type="text" id="deleteTekst" name="deleteID"  value="Indtast orderens ID"><br>
         <br>
-        <input type="submit" value="Slet">
+        <input type="submit" value="Slet" class="btn btn-danger">
     </form>
 
     <br>
@@ -67,9 +66,9 @@
     <br>
 
 
-    <form name="logout" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="logout">
-        <input type="submit" value= "Logout">
-    </form>
+<form align="center" name="logout" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
+</form>
 
     <%@include file="../Includes/Footer.inc"%>

@@ -6,7 +6,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
 <%@include file="../Includes/Header2.inc"%>
 <div align="center">
 </div>
@@ -64,9 +63,9 @@ ${requestScope.error}
 
 </c:if>
 <br>
-<form name="logout" action="FrontController" method="POST">
+<form align="center" name="logout" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="logout">
-    <input type="submit" value= "Logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
 </form>
 
 <%@include file="../Includes/Footer.inc"%>

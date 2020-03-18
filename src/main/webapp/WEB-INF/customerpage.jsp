@@ -26,8 +26,8 @@
         You are now logged in as a customer of our wonderful site.
 
     <br>
-        <form name="logout" action="FrontController" method="POST">
-            <input type="hidden" name="taget" value="logout">
-            <input type="submit" value= "Logout">
-        </form>
+<form align="center" name="logout" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
+</form>
     <%@include file="../Includes/Footer.inc"%>

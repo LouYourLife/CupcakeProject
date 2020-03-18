@@ -19,16 +19,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav navbar-center">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Ordrer<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="">Ordrer<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Kunder</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Betal</a>
+                        <a class="nav-link" href="#"><span class="fas fa-shopping-basket"></span></a>
                     </li>
 
                 </ul>
+
             </div>
         </nav>
     </div>
@@ -39,8 +40,11 @@
 
     <form name="login" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="loginpage">
-        <input type="submit" value="Gå til loginside">
+        <input type="submit" value="Gå til loginside" class="btn btn-outline-dark">
     </form>
+
+    <h2 align="center">Bestil en cupcake</h2>
+    <br>
 
     <form name="order" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="order">
@@ -82,7 +86,7 @@
                     <input type="number" name="amount" class="form-control" placeholder="Hvor mange" id="Antal">
                 </div>
                 <br><br>
-                <input type="submit" value="order" class="btn btn-primary">
+                <input type="submit" value="order" class="btn btn-primary btn-lg">
             </div>
         </div>
 
@@ -90,9 +94,9 @@
 
 </div>
 <br>
-<form name="logout" action="FrontController" method="POST">
+<form align="center" name="logout" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="logout">
-    <input type="submit" value= "Logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
 </form>
 <br><br><br><br>
 <%@include file="Includes/Footer.inc"%>

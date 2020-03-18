@@ -1,4 +1,8 @@
 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@include file="../Includes/Header2.inc"%>
 <h1>Du er nu logget ind som ${sessionScope.email}</h1>
 <h3>Bestil en cupcake : </h3>
@@ -42,7 +46,7 @@
                 <input type="number" name="amount" class="form-control" placeholder="Hvor mange" id="Antal">
             </div>
             <br><br>
-            <input type="submit" value="order" class="btn btn-primary">
+            <input type="submit" value="order" class="btn btn-primary btn-lg">
         </div>
     </div>
 
@@ -74,7 +78,7 @@
     <br>
 
         <tr>
-        <c:forEach var="item" items="${sessionScope.userOrders}">
+        <c:forEach var="item" items="${sessionScope.orderList}">
 
             <!-- TODO Lav så OrdrerID virker  -->
             <td>${item.id}</td>
@@ -96,13 +100,13 @@
 
 
 <form name="login" action="FrontController" method="POST">
-    <input type="hidden" name="taget" value="customer">
+    <input type="hidden" name="taget" value="loginpage">
     <input type="submit" value="Gå tilbage">
 </form>
 
 <br>
-<form name="logout" action="FrontController" method="POST">
+<form align="center" name="logout" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="logout">
-    <input type="submit" value="Logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
 </form>
 <%@include file="../Includes/Footer.inc"%>
