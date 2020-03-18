@@ -2,10 +2,10 @@ package PresentationLayer;
 
 import DBAccess.OrderMapper;
 import FunctionLayer.LoginSampleException;
-import FunctionLayer.Order;
 import FunctionLayer.OrderHelper;
 import FunctionLayer.User;
 
+import javax.persistence.criteria.Order;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,18 +16,13 @@ public class DeleteOrder extends Command {
         HttpSession session = request.getSession();
         //first draft
         User user = (User) session.getAttribute("user");
-        String top = request.getParameter("top");
-        String bot = request.getParameter("bot");
+        int id = Integer.parseInt(request.getParameter("deleteIDU"));
 
-        int amount = Integer.parseInt(request.getParameter("amount"));
-        int prices = OrderHelper.getPrices(request, response);
-        int sum = prices * amount;
+        OrderMapper.deleteOrder(id,user.getEmail());
 
-        int id =OrderMapper.findID(user.getEmail(), top);
-        Order o = new Order(user.getEmail(),  top,  bot,  amount,  sum,  id);
+// Hvis useren på sessionen er den samme som den på orderen, så kan du godt delende est carthago AKA kan vi godt delete
 
-
-        OrderMapper.deleteOrder(o);
+     //  OrderMapper.deleteOrder(o);
 
         return "CartPage";
     }

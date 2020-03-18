@@ -89,5 +89,17 @@
     <input type="hidden" name="taget" value="logout">
     <input type="submit" value= "Logout" class="btn btn-outline-dark">
 </form>
+
+<div style="text-align: center; display: block">
+    <form name="deleteUserOrder" action="FrontController" align="center" style="display: inline-block; margin-left: auto; margin-right: auto; text-align: left">
+        <input type="hidden" name="taget" value="deleteOrder">
+        <label for="deleteTekst">Ordre du vil slette:</label><br>
+        <input type="text" id="deleteTekst"  name="deleteIDU" value="Indtast ID"><br>
+        <br>
+        <%--        <input type="submit" value="Slet">--%>
+        <button type="submit" class="btn btn-primary">Slet</button>
+    </form>
+</div>
+
 <%@include file="../Includes/Footer.inc"%>
 
