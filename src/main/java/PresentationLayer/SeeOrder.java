@@ -23,6 +23,8 @@ public class SeeOrder extends Command {
         String email = (String) session.getAttribute("email");
         System.out.println(email);
         ArrayList<Order> userOrders = OrderMapper.seeOrders2(email);
+
+        System.out.println("Størrelsen er: " + userOrders.size());
         session.setAttribute("userOrders", userOrders);
 
         return "Cart" + "Page";

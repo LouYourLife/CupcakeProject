@@ -18,10 +18,6 @@ import java.util.Map;
  */
 public class Login extends Command {
 
-
-
-
-
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
         HttpSession session = request.getSession();
@@ -37,13 +33,12 @@ public class Login extends Command {
         Map<String, String> inde = new HashMap<>();
         inde.put(email,password);
 
-        if (!(user.getRole().equals("employee"))){
-            if (request.getParameter("top") != null && request.getParameter("bot") != null && request.getParameter("amount") != null) {
-                FunctionLayer.OrderHelper.makeOrder(request, response);
+        if (!(user.getRole().equalsIgnoreCase( "employee"))){
 
-                return "index";
+                ArrayList<Order> userOrders = OrderMapper.seeOrders2(email);
+
+                session.setAttribute("userOrders", userOrders);
             }
-        }
 
         if(user.getRole().equals("customer")){
             return "CartPage";

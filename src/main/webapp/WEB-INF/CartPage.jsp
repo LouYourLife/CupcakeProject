@@ -53,15 +53,16 @@
 </form>
 
 <h2>Liste over dine ordrer:</h2>
-<!-- DESIGN TODO ! Skal der være boks i indkøbskurv -->
+<!-- DESIGN TODO ! Skal der være boks i indkøbskurv? -->
 
 <div class="container">
     <c:forEach var="item" items="${sessionScope.userOrders}">
         ${item}
+
         <br>
     </c:forEach>
 </div>
-<%--
+
 <table cellpadding="2" cellspacing="2" border = "0">
 
     <tr>
@@ -78,8 +79,8 @@
 
         <tr>
         <c:forEach var="item" items="${sessionScope.userOrders}">
-            <c:set var="total" value="${item.sum}"> </c:set>
-            <!-- TODO Lav så OrdrerID virker -->
+
+            <!-- TODO Lav så OrdrerID virker  -->
             <td>${item.id}</td>
             <td>${item.top}</td>
             <td>${item.bot}</td>
@@ -88,14 +89,14 @@
         </c:forEach>
         </tr>
 
-
-    <tr>
-        <td colspan="6" align="right">Total</td>
-        <td>{total}</td>
-    </tr>
+<%--    <tr>--%>
+<%--        <c:set var="total" value="${item.sum}"> </c:set>--%>
+<%--        <td colspan="10" align="right">Total</td>--%>
+<%--        <td>{total}</td>--%>
+<%--    </tr>--%>
 
 </table>
-<br>--%>
+<br>
 
 
 <form name="login" action="FrontController" method="POST">
