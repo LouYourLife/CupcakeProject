@@ -1,104 +1,134 @@
+
 <html>
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
     <title>MainPage</title>
-    <meta charset="utf-8">
 </head>
 <body>
 
-<div align="center">
+<div class="container" align="center">
     <img src="Images/olskercupcakes.png" class="img-fluid">
-</div>
-<div align="center">
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<h1>Du er nu logget ind som ${sessionScope.email}</h1>
+<h3>Bestil en cupcake : </h3>
+<form name="order" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="order">
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <div class="col-4">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="bot">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav navbar-nav navbar-center">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Ordrer <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kunder</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Betal</a>
-                    </li>
+                <option selected>Choose...</option>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Nutmeg">Nutmeg</option>
+                <option value="Pistacio">Pistacio</option>
+                <option value="Almond">Almond</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Topping</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="top">
 
-                </ul>
+                <option selected>Choose...</option>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Blueberry">Blueberry</option>
+                <option value="Raspberry">Raspberry</option>
+                <option value="Crispy">Crispy</option>
+                <option value="Strawberry">Strawberry</option>
+                <option value="Rum/Raisin">Rum/Raisin</option>
+                <option value="Orange">Orange</option>
+                <option value="Lemon">Lemon</option>
+                <option value="Blue cheese">Blue cheese</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Antal</label>
+            <div class="form-group">
+                <label for="Antal"></label>
+
+                <!--                    Her kan man ikke skrive tekst-->
+                <input type="number" name="amount" class="form-control" placeholder="Hvor mange" id="Antal">
             </div>
-        </nav>
+            <br><br>
+            <input type="submit" value="order" class="btn btn-primary btn-lg">
+        </div>
     </div>
 
-    <h1 align="center">Velkommen ombord</h1>
-    <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
+</form>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+<h2>Liste over dine ordrer:</h2>
+<!-- DESIGN TODO ! Skal der være boks i indkøbskurv? -->
 
+<div class="container">
+    <c:forEach var="item" items="${sessionScope.userOrders}">
+        ${item}
 
-    <form name="login" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="loginpage">
-        <input type="submit" value="Gå til loginside">
-    </form>
-
-    <form name="order" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="login">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-            <div class="col-4">
-                <label class="mr-sm-2" for="inlineFormCustomSelect">Bund</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="bot">
-
-                    <option selected>Choose...</option>
-                    <option value="1">Chocolate</option>
-                    <option value="2">Vanilla</option>
-                    <option value="3">Nutmeg</option>
-                    <option value="4">Pistacio</option>
-                    <option value="5">Almond</option>
-                </select>
-            </div>
-            <div class="col-4">
-                <label class="mr-sm-2" for="inlineFormCustomSelect">Topping</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="top">
-
-                    <option selected>Choose...</option>
-                    <option value="1">Chocolate</option>
-                    <option value="2">Blueberry</option>
-                    <option value="3">Raspberry</option>
-                    <option value="4">Crispy</option>
-                    <option value="5">Strawberry</option>
-                    <option value="6">Rum/Raisin</option>
-                    <option value="7">Orange</option>
-                    <option value="8">Lemon</option>
-                    <option value="9">Blue cheese</option>
-                </select>
-            </div>
-            <div class="col-4">
-                <label class="mr-sm-2" for="inlineFormCustomSelect">Antal</label>
-                <div class="form-group">
-                    <label for="Antal"></label>
-
-                    <!--                    Her kan man ikke skrive tekst-->
-                    <input type="number" name="amount" class="form-control" placeholder="Hvor mange" id="Antal">
-                </div>
-                <br><br>
-                <input type="submit" value="Bestil" class="btn btn-primary">
-            </div>
-        </div>
-
-    </form>
+        <br>
+    </c:forEach>
 </div>
+
+<table cellpadding="2" cellspacing="2" border = "0">
+
+    <tr>
+        <!--- <th>Fjern</th> -->
+        <th>Ordernummer</th>
+        <th>Topping</th>
+        <th>Bund</th>
+        <th>Antal</th>
+        <th>Beløb</th>
+    </tr>
+
+
+    <br>
+
+    <tr>
+        <c:forEach var="item" items="${sessionScope.userOrders}">
+
+            <!-- TODO Lav så OrdrerID virker  -->
+            <td>${item.id}</td>
+            <td>${item.top}</td>
+            <td>${item.bot}</td>
+            <td>${item.amount}</td>
+            <td>${item.sum}</td>
+        </c:forEach>
+    </tr>
+
+    <%--    <tr>--%>
+    <%--        <c:set var="total" value="${item.sum}"> </c:set>--%>
+    <%--        <td colspan="10" align="right">Total</td>--%>
+    <%--        <td>{total}</td>--%>
+    <%--    </tr>--%>
+
+</table>
+<br>
+
+
+<form name="login" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="loginpage">
+    <input type="submit" value="Gå tilbage">
+</form>
+
+<br>
+<form align="center" name="logout" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
+</form>
+    </div>
 <br><br><br><br>
 <footer class="page-footer font-small blue">
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2020 Copyright: BSHProduction
+</div>
 
-    </div>
     <!-- Copyright -->
 
 </footer>

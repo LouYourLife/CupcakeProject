@@ -52,6 +52,10 @@
 
 </form>
 
+<div class="shadow p-3 mb-5 bg-white rounded">
+<h2>Liste over dine ordrer:</h2>
+<!-- DESIGN TODO ! Skal der være boks i indkøbskurv? -->
+
 
 </table>
 <br>
@@ -90,6 +94,7 @@
     <input type="submit" value= "Logout" class="btn btn-outline-dark">
 </form>
 
+
 <div style="text-align: center; display: block">
     <form name="deleteUserOrder" action="FrontController" align="center" style="display: inline-block; margin-left: auto; margin-right: auto; text-align: left">
         <input type="hidden" name="taget" value="deleteOrder">
@@ -100,6 +105,7 @@
         <button type="submit" class="btn btn-primary">Slet</button>
     </form>
 </div>
+
 
 <%@include file="../Includes/Footer.inc"%>
 
