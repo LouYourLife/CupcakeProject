@@ -6,13 +6,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer home page</title>
-    </head>
-    <body>
     <%@include file="../Includes/Header2.inc"%>
 
 
@@ -23,7 +16,7 @@
         Her vises listen
 
         <form name="login" action="FrontController" method="POST">
-            <input type="hidden" name="taget" value="seeOrders">
+            <input type="hidden" name="taget" value="SeeOrders">
             <input type="submit" value="Gå til ordreliste">
         </form>
 
@@ -33,9 +26,8 @@
         You are now logged in as a customer of our wonderful site.
 
     <br>
-        <form name="logout" action="FrontController" method="POST">
-            <input type="hidden" name="taget" value="logout">
-            <input type="submit" value= "Logout">
-        </form>
-    </body>
-</html>
+<form align="center" name="logout" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
+</form>
+    <%@include file="../Includes/Footer.inc"%>

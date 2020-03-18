@@ -9,6 +9,7 @@ import FunctionLayer.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class OrderCommand extends Command {
     @Override
@@ -24,13 +25,14 @@ public class OrderCommand extends Command {
         String top = request.getParameter("top");
         String bot = request.getParameter("bot");
         int amount = Integer.parseInt(request.getParameter("amount"));
-        int prices = OrderHelper.getPrices(request, response);           //OrderMapper.getPrices(top, bot);
+        int prices = OrderHelper.getPrices(request, response);
         int sum = prices * amount;
 
         Order order = new Order(user, top, bot, amount, sum);
         OrderMapper.makeOrder(order);
 
-        request.setAttribute("orderlist", OrderMapper.seeOrders(user));
+        ArrayList<Order> userOrders = OrderMapper.seeOrders2((String) session.getAttribute("email"));
+        session.setAttribute("userOrders", userOrders);
 
         return "CartPage";
 

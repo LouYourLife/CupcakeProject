@@ -130,7 +130,6 @@ public class OrderMapper {
             ps.execute();
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-
                 String uzi = rs.getString("user");
                 String top = rs.getString("top");
                 String bot = rs.getString("bot");
@@ -169,7 +168,6 @@ public class OrderMapper {
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }
-
         return orderList;
     }
 

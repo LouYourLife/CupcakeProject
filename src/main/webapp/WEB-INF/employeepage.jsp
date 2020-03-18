@@ -1,21 +1,11 @@
 <%--Author: Vibeke--%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <%--        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">--%>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <meta charset="utf-8">
-    <title>Employee home page</title>
-</head>
-<body>
-<%@include file="../Includes/Header2.inc" %>
-<div class="container" align="center">
-    <img src="src/main/webapp/WEB-INF/olskercupcakes.png" class="img-fluid"/>
-</div>
+    <%@include file="../Includes/Header2.inc"%>
+    <div align="center">
+    </div>
 
 
 <h1 align="center">Hello ${sessionScope.email} </h1>
@@ -88,5 +78,7 @@ ${requestScope.addAmMes}
     <button type="submit" class="btn btn-primary">Logout</button>
 </form>
 
-</body>
-</html>
+
+
+    <%@include file="../Includes/Footer.inc"%>
+

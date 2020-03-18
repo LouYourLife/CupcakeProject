@@ -16,7 +16,6 @@ public class Connector {
     private static final String PASSWORD = "AtM12K13BoC185";
 
 
-
     private static Connection singleton;
 
     public static void setConnection( Connection con ) {

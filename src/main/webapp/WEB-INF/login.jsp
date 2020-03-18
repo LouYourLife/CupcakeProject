@@ -6,15 +6,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <title>MainPage</title>
-    <meta charset="utf-8">
-</head>
-<body>
 <%@include file="../Includes/Header2.inc"%>
 <div align="center">
 </div>
@@ -27,6 +18,7 @@
                 <h2 align="center">Login</h2>
                 <form name="login" action="FrontController" method="POST">
                     <input type="hidden" name="taget" value="login">
+
 
                     <div class="form-group">
                         <input type="email" name="email" class="form-control" value="email">
@@ -72,21 +64,9 @@ ${requestScope.error}
 
 </c:if>
 <br>
-<form name="logout" action="FrontController" method="POST">
+<form align="center" name="logout" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="logout">
-    <input type="submit" value= "Logout">
+    <input type="submit" value= "Logout" class="btn btn-outline-dark">
 </form>
 
-<footer class="page-footer font-small blue">
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright: BSHProduction
-
-    </div>
-    <!-- Copyright -->
-
-</footer>
-
-
-</body>
-</html>
+<%@include file="../Includes/Footer.inc"%>
