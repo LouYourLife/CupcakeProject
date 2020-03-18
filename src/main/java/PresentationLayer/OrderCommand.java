@@ -9,6 +9,7 @@ import FunctionLayer.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class OrderCommand extends Command {
     @Override
@@ -30,7 +31,11 @@ public class OrderCommand extends Command {
         Order order = new Order(user, top, bot, amount, sum);
         OrderMapper.makeOrder(order);
 
-        request.setAttribute("orderlist", OrderMapper.seeOrders(user));
+        ArrayList<Order> tempList = (ArrayList<Order>) session.getAttribute("userOrders");
+        tempList.add(order);
+        session.setAttribute("userOrders", tempList);
+
+        //request.setAttribute("orderlist", OrderMapper.seeOrders(user));
 
         return "CartPage";
 
