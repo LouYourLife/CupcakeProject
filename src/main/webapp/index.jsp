@@ -11,21 +11,18 @@
 </div>
 <div align="center">
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav navbar-nav navbar-center">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="">Ordrer<span class="sr-only">(current)</span></a>
-                    </li>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="nav navbar-nav navbar-center justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kunder</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="fas fa-shopping-basket"></span></a>
+                        <form name="login" action="FrontController" method="POST">
+                            <input type="hidden" name="taget" value="kurv">
+                            <button class="btn" type="submit"><span class="fas fa-shopping-basket"></span></button>
+                        </form>
                     </li>
 
                 </ul>
@@ -36,7 +33,6 @@
 
     <h1 align="center">Velkommen ombord</h1>
     <h2 align="center">Øens bedste cupcakes kom og bestil her</h2>
-
 
     <form name="login" action="FrontController" method="POST">
         <input type="hidden" name="taget" value="loginpage">
@@ -100,3 +96,6 @@
 </form>
 <br><br><br><br>
 <%@include file="Includes/Footer.inc"%>
+
+
+

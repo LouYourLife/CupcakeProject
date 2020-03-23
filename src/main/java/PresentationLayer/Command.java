@@ -23,6 +23,7 @@ abstract class Command {
         commands.put( "customer" ,new Customer());
         commands.put( "logout" ,new Logout());
         commands.put("adminDelete", new AdminDeleteOrder());
+        commands.put("kurv", new KurvTjek());
     }
 
     static Command from( HttpServletRequest request ) {
