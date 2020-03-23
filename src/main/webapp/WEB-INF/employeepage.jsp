@@ -62,7 +62,7 @@ ${requestScope.addAmMes}
         <input type="text" id="deleteTekst" name="deleteID" value="Indtast orderens ID"><br>
         <br>
 <%--        <input type="submit" value="Slet">--%>
-        <button type="submit" class="btn btn-primary">Slet</button>
+        <button align="center" type="submit" class="btn btn-danger">Slet</button>
     </form>
 </div>
 
