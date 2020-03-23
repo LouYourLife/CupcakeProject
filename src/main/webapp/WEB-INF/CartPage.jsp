@@ -52,6 +52,10 @@
 
 </form>
 
+<div class="shadow p-3 mb-5 bg-white rounded">
+
+<!-- DESIGN TODO ! Skal der være boks i indkøbskurv? -->
+
 
 </table>
 <br>
@@ -84,10 +88,32 @@
 </div>
 
 
-<br>
-<form align="center" name="logout" action="FrontController" method="POST">
-    <input type="hidden" name="taget" value="logout">
-    <input type="submit" value= "Logout" class="btn btn-outline-dark">
-</form>
+
+
+    <c:if test = "${requestScope.errorDel!= null}" >
+
+    <h2>Error ! </h2>
+        ${requestScope.errorDel}
+        <p>Order not found in your cart</p>
+
+    </c:if>
+
+
+<div style="text-align: center; display: block">
+    <form name="deleteUserOrder" action="FrontController" align="center" style="display: inline-block; margin-left: auto; margin-right: auto; text-align: left">
+        <input type="hidden" name="taget" value="deleteOrder">
+        <label for="deleteTekst">Ordre du vil slette:</label><br>
+        <input type="text" id="deleteTekst"  name="deleteIDU" value="Indtast ID"><br>
+        <br>
+        <%--        <input type="submit" value="Slet">--%>
+        <button type="submit" class="btn btn-primary">Slet</button>
+    </form>
+</div>
+</div>
+    <br>
+    <form align="center" name="logout" action="FrontController" method="POST">
+        <input type="hidden" name="taget" value="logout">
+        <input type="submit" value= "Logout" class="btn btn-outline-dark">
+    </form>
 <%@include file="../Includes/Footer.inc"%>
 

@@ -25,19 +25,27 @@ public class OrderMapper {
         }
     }
 //    måske færdig
-    public static void deleteOrder(Order order) throws LoginSampleException {
+    public static void deleteOrder(int id, String email) throws LoginSampleException, SQLException {
         try {
             Connection con = Connector.connection();
             //delete from cakeorders.users where user = '123@gmail.com';
-            String SQL = "DELETE FROM orders WHERE id = ?;";
+            String SQL = "DELETE FROM orders WHERE id = ? AND user = ?;";
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setInt(1, order.getId());
+            ps.setInt(1, id);
+            ps.setString(2, email);
             ps.execute();
 
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
+            throw new SQLException("You do not have such an order");
+
+           // throw new LoginSampleException( "You do not have such an order" );
         }
+
+
+
     }
+
+
     public static void adminDelete(int id) throws LoginSampleException {
         try {
             Connection con = Connector.connection();

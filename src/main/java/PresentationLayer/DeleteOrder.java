@@ -9,6 +9,8 @@ import FunctionLayer.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class DeleteOrder extends Command {
     @Override
@@ -16,18 +18,21 @@ public class DeleteOrder extends Command {
         HttpSession session = request.getSession();
         //first draft
         User user = (User) session.getAttribute("user");
-        String top = request.getParameter("top");
-        String bot = request.getParameter("bot");
-
-        int amount = Integer.parseInt(request.getParameter("amount"));
-        int prices = OrderHelper.getPrices(request, response);
-        int sum = prices * amount;
-
-        int id =OrderMapper.findID(user.getEmail(), top);
-        Order o = new Order(user.getEmail(),  top,  bot,  amount,  sum,  id);
+        int id = Integer.parseInt(request.getParameter("deleteIDU"));
+// Hvis useren på sessionen er den samme som den på orderen, så kan du godt delende est carthago AKA kan vi godt delete
+     //  OrderMapper.deleteOrder(o);
 
 
-        OrderMapper.deleteOrder(o);
+        try {
+            OrderMapper.deleteOrder(id,user.getEmail());
+        } catch (Exception e) {
+
+            request.setAttribute("errorDel" , e.getMessage() );
+            e.printStackTrace();
+        }
+        ArrayList<Order> userOrders = OrderMapper.seeOrders2((String) session.getAttribute("email"));
+
+        session.setAttribute("userOrders", userOrders);
 
         return "CartPage";
     }
