@@ -15,3 +15,32 @@
 
 <div class="container" align="center">
     <img src="Images/olskercupcakes.png" class="img-fluid">
+    <div align="center">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="nav navbar-nav navbar-center justify-content-center">
+                        <li class="nav-item">
+                            <form name="login" action="FrontController" method="POST">
+                                <input type="hidden" name="taget" value="kurv">
+                                <button class="btn" type="submit"><span class="fas fa-shopping-basket"></span></button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <form name="index" action="FrontController" method="POST">
+                                <input type="hidden" name="taget" value="index">
+                                <%--    <input type="submit" value="Gå tilbage">--%>
+                                <button type="submit" class="btn">Til forsiden</button>
+                            </form>
+
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </div>

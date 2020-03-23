@@ -24,6 +24,7 @@ abstract class Command {
         commands.put( "logout" ,new Logout());
         commands.put("adminDelete", new AdminDeleteOrder());
         commands.put("kurv", new KurvTjek());
+        commands.put("index", new ToIndex());
     }
 
     static Command from( HttpServletRequest request ) {

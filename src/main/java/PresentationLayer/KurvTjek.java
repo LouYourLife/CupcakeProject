@@ -1,6 +1,7 @@
 package PresentationLayer;
 
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,10 +12,14 @@ public class KurvTjek extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
 
+
+
         if (session.getAttribute("user") != null){
+            if(((User)session.getAttribute("user")).getRole().equalsIgnoreCase("employee")){
+                return "employeepage";
+            }
             return "CartPage";
         }
-
 
         return "login";
     }

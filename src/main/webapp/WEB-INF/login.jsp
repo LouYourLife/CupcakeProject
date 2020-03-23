@@ -7,8 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@include file="../Includes/Header2.inc"%>
-<div align="center">
-</div>
+
 <h1 align="center">Login for at betale for dine CupCakes</h1>
 
 <div align="center">
@@ -63,7 +62,9 @@
 ${requestScope.error}
 
 </c:if>
+
 <br>
+<p align="center">${sessionScope.email}</p>
 <form align="center" name="logout" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="logout">
     <input type="submit" value= "Logout" class="btn btn-outline-dark">

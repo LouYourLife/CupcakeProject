@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@include file="../Includes/Header2.inc"%>
+
 <h1>Du er nu logget ind som ${sessionScope.email}</h1>
 <h3>Bestil en cupcake : </h3>
 <form name="order" action="FrontController" method="POST">
