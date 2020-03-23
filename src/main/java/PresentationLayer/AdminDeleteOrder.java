@@ -15,6 +15,9 @@ public class AdminDeleteOrder extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
         //first draft
+        if (request.getParameter("deleteID").equalsIgnoreCase("Indtast orderens ID")){
+            return "employeepage";
+        }
         int id = Integer.parseInt(request.getParameter("deleteID"));
 // skal fåes fra table slet by ID
         OrderMapper.adminDelete(id);
