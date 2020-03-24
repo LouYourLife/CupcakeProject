@@ -15,7 +15,7 @@
 
 <div class="container" align="center">
 
-    <img src="Images/olskercupcakes.png" class="img-fluid">
+    <img src="images/olskercupcakes.png" class="img-fluid">
     <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
 
