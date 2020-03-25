@@ -14,6 +14,7 @@ public class Connector {
     private static String URL;
     private static String USERNAME;
     private static String PASSWORD;
+
     private static Connection singleton;
 
     public static void setConnection( Connection con ) {
@@ -45,4 +46,5 @@ public class Connector {
 
         }
     }
+
 }
