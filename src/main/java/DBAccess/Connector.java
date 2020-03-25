@@ -11,11 +11,9 @@ import java.sql.SQLException;
  */
 public class Connector {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/cakeorders?serverTimezone=CET&useSSL=false";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "cph39178";
-
-
+    private static String URL;
+    private static String USERNAME;
+    private static String PASSWORD;
     private static Connection singleton;
 
     public static void setConnection( Connection con ) {
@@ -24,10 +22,27 @@ public class Connector {
 
     public static Connection connection() throws ClassNotFoundException, SQLException {
         if ( singleton == null ) {
+            setDBCredentials();
             Class.forName( "com.mysql.cj.jdbc.Driver" );
             singleton = DriverManager.getConnection( URL, USERNAME, PASSWORD );
         }
         return singleton;
     }
 
+    public static void setDBCredentials() {
+        String deployed = System.getenv("DEPLOYED");
+        if (deployed != null) {
+            //Prod: hent variabler fra setenv.sh
+            URL = System.getenv("JDBC_CONNECTION_STRING");
+            USERNAME = System.getenv("JDBC_USER");
+            PASSWORD = System.getenv("JDBC_PASSWORD");
+
+        } else {
+            //Localhost
+            URL = "jdbc:mysql://localhost:3306/cakeorders?serverTimezone=CET&useSSL=false";
+            USERNAME = "root";
+            PASSWORD = "cph39178";
+
+        }
+    }
 }

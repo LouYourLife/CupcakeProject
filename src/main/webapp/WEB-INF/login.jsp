@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@include file="../Includes/Header2.inc"%>
+</div>
 
 <h1 align="center">Login for at betale for dine CupCakes</h1>
 
@@ -17,8 +18,7 @@
                 <h2 align="center">Login</h2>
                 <form name="login" action="FrontController" method="POST">
                     <input type="hidden" name="taget" value="login">
-
-
+                    
                     <div class="form-group">
                         <input type="email" name="email" class="form-control" value="email">
                     </div>
@@ -36,7 +36,7 @@
                 <form name="register" action="FrontController" method="POST">
                     <input type="hidden" name="taget" value="register">
                     <div class="form-group">
-                        <input type="text" name="email" class="form-control"  value="email">
+                        <input type="email" name="email" class="form-control"  value="email">
                     </div>
                     <div class="form-group">
                         <input type="password" name="password1" class="form-control" value="password">

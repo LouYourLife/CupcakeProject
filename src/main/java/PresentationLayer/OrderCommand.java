@@ -25,6 +25,9 @@ public class OrderCommand extends Command {
         String top = request.getParameter("top");
         String bot = request.getParameter("bot");
         int amount = Integer.parseInt(request.getParameter("amount"));
+        if(amount < 1){
+            return "CartPage";
+        }
         int prices = OrderHelper.getPrices(request, response);
         int sum = prices * amount;
 
