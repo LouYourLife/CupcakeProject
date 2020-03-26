@@ -24,7 +24,14 @@ public class OrderCommand extends Command {
 
         String top = request.getParameter("top");
         String bot = request.getParameter("bot");
+        if(top.equalsIgnoreCase("Choose...") || bot.equalsIgnoreCase("Choose...")){
+            return "CartPage";
+        }
+        if(request.getParameter("amount").equalsIgnoreCase("")){
+            return "CartPage";
+        }
         int amount = Integer.parseInt(request.getParameter("amount"));
+
         if(amount < 1){
             return "CartPage";
         }
