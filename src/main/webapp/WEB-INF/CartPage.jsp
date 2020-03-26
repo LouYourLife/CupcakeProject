@@ -5,8 +5,12 @@
 
 <%@include file="../Includes/Header2.inc"%>
 
+<br>
+<div class="container bg-light rounded shadow" align="center">
+
 <h1>Du er nu logget ind som ${sessionScope.email}</h1>
 <h3>Bestil en cupcake : </h3>
+
 <form name="order" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="order">
     <div class="shadow p-3 mb-5 bg-white rounded">
@@ -52,13 +56,11 @@
     </div>
 
 </form>
+    <br>
+</div>
 
 <div class="shadow p-3 mb-5 bg-white rounded">
 
-<!-- DESIGN TODO ! Skal der være boks i indkøbskurv? -->
-
-
-</table>
 <br>
 <div class="container">
     <h2>Liste over dine ordrer:</h2>
@@ -112,9 +114,11 @@
 </div>
 </div>
     <br>
-    <form align="center" name="logout" action="FrontController" method="POST">
-        <input type="hidden" name="taget" value="logout">
-        <input type="submit" value= "Logout" class="btn btn-outline-dark">
-    </form>
+<p align="center">${sessionScope.email}</p>
+<form align="center" name="logout" action="FrontController" method="POST">
+    <input type="hidden" name="taget" value="logout">
+    <input type="submit" value="Logout" class="btn btn-outline-light" style="color:White">
+</form>
+</div>
 <%@include file="../Includes/Footer.inc"%>
 

@@ -10,14 +10,17 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>MainPage</title>
+
+    <style>
+        body {background-color: #3C1460;}
+        </style>
 </head>
 <body>
 
 <div class="container" align="center">
     <img src="Images/olskercupcakes.png" class="img-fluid">
-    <div align="center">
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center rounded" style="background-color:#eee;">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,4 +46,4 @@
                 </div>
             </nav>
         </div>
-    </div>
+

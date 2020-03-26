@@ -5,8 +5,9 @@
 
 
 <%@include file="../Includes/Header2.inc"%>
-<div align="center">
-</div>
+<br>
+
+<div class="container bg-light rounded shadow" align="center">
 
 <div align="center">
     <table>
@@ -69,10 +70,16 @@
     <%--    <input type="submit" value="Gå tilbage">--%>
     <button type="submit" class="btn btn-primary">Gå tilbage</button>
 </form>
+    <br>
+</div>
+<br>
 
+<p align="center">${sessionScope.email}</p>
 <form align="center" name="logout" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="logout">
-    <input type="submit" value= "Logout" class="btn btn-outline-dark">
+    <input type="submit" value="Logout" class="btn btn-outline-light" style="color:White">
 </form>
+
+</div>
 
 <%@include file="../Includes/Footer.inc"%>

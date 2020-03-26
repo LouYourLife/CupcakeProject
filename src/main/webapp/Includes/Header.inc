@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -10,24 +11,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>MainPage</title>
     <meta charset="utf-8">
+    <style>
+    body {background-color: #3C1460;}
+    </style>
+
 </head>
 <body>
 
 <div class="container" align="center">
 
     <img src="Images/olskercupcakes.png" class="img-fluid">
-    <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div >
+            <nav class="navbar navbar-expand-lg navbar-light justify-content-center rounded" style="background-color:#eee;">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="nav navbar-nav navbar-center justify-content-center">
+                    <ul class="nav navbar-nav navbar-center">
                         <li class="nav-item">
                             <form name="login" action="FrontController" method="POST">
                                 <input type="hidden" name="taget" value="kurv">
                                 <button class="btn" type="submit"><span class="fas fa-shopping-basket"></span></button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                        <form name="login" action="FrontController" method="POST">
+                                <input type="hidden" name="taget" value="loginpage">
+                                <input type="submit" value="Login" class="btn btn-outline-dark">
                             </form>
                         </li>
 
@@ -36,3 +47,4 @@
                 </div>
             </nav>
         </div>
+

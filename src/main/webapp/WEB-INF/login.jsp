@@ -7,14 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@include file="../Includes/Header2.inc"%>
-</div>
+<br>
+<div class="container bg-light rounded shadow" align="center">
+    <br>
+    <h1 align="center">Login for at betale for dine CupCakes</h1>
+    <br>
+    <div align="center" class="row">
 
-<h1 align="center">Login for at betale for dine CupCakes</h1>
-
-<div align="center">
-    <table>
-        <tr>
-            <td>
+                <div class="col">
                 <h2 align="center">Login</h2>
                 <form name="login" action="FrontController" method="POST">
                     <input type="hidden" name="taget" value="login">
@@ -29,9 +29,9 @@
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-            </td>
+                </div>
 
-            <td>
+                <div class="col">
                 <h2 align="center">Register</h2>
                 <form name="register" action="FrontController" method="POST">
                     <input type="hidden" name="taget" value="register">
@@ -49,12 +49,11 @@
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                </form>
-            </td>
-        </tr>
-    </table>
+                </div>
 
+    </div>
 </div>
+
 
 <c:if test = "${requestScope.error!= null}" >
 
@@ -67,7 +66,7 @@ ${requestScope.error}
 <p align="center">${sessionScope.email}</p>
 <form align="center" name="logout" action="FrontController" method="POST">
     <input type="hidden" name="taget" value="logout">
-    <input type="submit" value= "Logout" class="btn btn-outline-dark">
+    <input type="submit" value="Logout" class="btn btn-outline-light" style="color:White">
 </form>
-
+</div>
 <%@include file="../Includes/Footer.inc"%>
