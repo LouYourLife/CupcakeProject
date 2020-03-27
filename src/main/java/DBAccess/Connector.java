@@ -42,7 +42,7 @@ public class Connector {
             //Localhost
             URL = "jdbc:mysql://localhost:3306/cakeorders?serverTimezone=CET&useSSL=false";
             USERNAME = "root";
-            PASSWORD = "cph39178";
+            PASSWORD = "Matti12345h";
 
         }
     }
